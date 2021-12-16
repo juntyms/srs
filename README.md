@@ -24,7 +24,7 @@ $ php artisan db:seed <br />
     <li>Add Software in softwares table</li>
     <li>Edit Software from Software table</li>
     <li>Delete software from software table</li>
-<ul>
+</ul>
 
 <h2>Department Coordinator</h2>
 <ul>
