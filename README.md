@@ -24,9 +24,12 @@ $ php artisan db:seed <br />
     <li>Add Software in softwares table</li>
     <li>Edit Software from Software table</li>
     <li>Delete software from software table</li>
+    <li>View Software List per department</li>
+    <li>Assign User privilege in user privilege table</li>
+    <li>Delete User Privilege from user priviege table</li>
 </ul>
 
 <h2>Department Coordinator</h2>
 <ul>
-    <li>View Softwares assigned to their department</li>
+    <li>View Softwares assigned to their department</li>    
 </ul>
