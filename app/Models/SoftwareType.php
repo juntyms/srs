@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class SoftwareType extends Model
 {
     use HasFactory;
+    protected $table = 'software_types';
+    protected $fillable = ['name'];
 }
