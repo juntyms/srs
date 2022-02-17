@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Controller\vendorController;
 
-class Department extends Model
+class Vendor extends Model
 {
     use HasFactory;
-    protected $table = 'departments';
-    protected $fillable = ['id', 'name'];
-    
+    protected $table = 'software_vendors';
+    protected $fillable = ['name'];
 }
