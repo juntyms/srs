@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Privilege;
 use Adldap\Laravel\Facades\Adldap;
+use Alert;
 
 class signinController extends Controller
 {
@@ -17,46 +18,43 @@ class signinController extends Controller
 
     public function postlogin(Request $request)
     {
-        $username = $request->username.'@sct.edu.om';
+        $username = $request->username . '@sct.edu.om';
         $password = $request->password;
 
         try {
 
-            if (Adldap::auth()->attempt($username,$password))
-            {
-                $user = \DB::table('users')->where(['username'=>$request->username])->first();
-
-                if($user)
-                {
+            if (Adldap::auth()->attempt($username, $password)) {
+                $user = \DB::table('users')->where(['username' => $request->username])->first();
+                //dd($user);
+                if ($user) {
                     Auth::loginUsingId($user->id);
 
                     return redirect()->route('dashboard');
                 } else {
-                    Alert::error('Unable to Login','User Not Found on Database');
+                    Alert::error('Unable to Login', 'User Not Found on Database');
+
                     return redirect()->route('login');
                 }
             } else {
-                Alert::error('Unable to Login','Invalid Username / Password');
+                Alert::error('Unable to Login', 'Invalid Username / Password');
                 return redirect()->route('login');
             }
-        } catch (Adldap\Auth\UsernameRequiredException $e)
-        {
+        } catch (Adldap\Auth\UsernameRequiredException $e) {
             echo 'The user didn\'t supply a username.';
-        } catch (Adldap\Auth\PasswordRequiredException $e)
-        {
-            Alert::error('Unable to Login','Password Must be specified');
+        } catch (Adldap\Auth\PasswordRequiredException $e) {
+            Alert::error('Unable to Login', 'Password Must be specified');
             return redirect()->back();
         }
     }
 
-        
+
     //public function logout(Request $request)
     //{
-        //Auth::logout();
-        //$request->session()->invalidate();
-        //$request->session()->regenerateToken();
-        //session()->forget('postlogin');
-        //return redirect('/login')->with('msg','Logout Successfully');
+    //Auth::logout();
+    //$request->session()->invalidate();
+    //$request->session()->regenerateToken();
+    //session()->forget('postlogin');
+    //return redirect('/login')->with('msg','Logout Successfully');
     //}
     public function logout()
     {
