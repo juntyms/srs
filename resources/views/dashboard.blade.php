@@ -1,14 +1,13 @@
 @extends('layouts.n')
 @section('title','Dashboard - SRS')
 @section('content')
-<h4>Welcome</h4>
-<table>
-  <thead>
-      <tr>
-          <th>Software name</th>
-          <th>Software name</th>
-          <th>Software name</th>
-</tr>
-</thead>
-</table>
+
+      @if (!empty(Auth::user()->privilege->privilege_id))
+      @if(Auth::user()->privilege->privilege_id == 1)
+            @include('dashboards.admin')
+      @else
+            @include('dashboards.coordinator')
+      @endif
+      @endif
+
 @endsection

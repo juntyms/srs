@@ -21,21 +21,31 @@
             @csrf
             <table class="table table-bordered">
                 <tr>
+                {{ Form::model($user,['route'=>['user.update',$user->id]]) }}
                     <th>Username</th>
-                    <th>Password</th>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    <th>Action</th>
+                    <td>{{ Form::text('username',null) }}</td>
                 </tr>
                 <tr>
-                {{ Form::model($user,['route'=>['user.update',$user->id]]) }}  
-                    <td>{{ Form::text('username',null) }}</td>
+                    <th>Password</th>
                     <td>{{ Form::text('password',null) }}</td>
-                    <td>{{ Form::text('fullname',null) }}</td>
-                    <td>{{ Form::text('email',null) }}</td>
-                    <td><input type="submit" value="Update User" class="btn btn-info btn-sm"></td>
-                    {{ Form::close() }}
                 </tr>
+                <tr>
+                    <th>Department</th>
+                    <td>{{ Form::select('department_id',$department,null) }}</td>
+                </tr>
+                <tr>
+                    <th>Full Name</th>
+                    <td>{{ Form::text('fullname',null) }}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{ Form::text('email',null) }}</td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Update User" class="btn btn-info btn-sm"></td>
+                    {{ Form::close() }}  
+                </tr>
+
             </table>
     </div>
 </div> 

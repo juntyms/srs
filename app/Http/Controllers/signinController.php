@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Privilege;
 use Adldap\Laravel\Facades\Adldap;
 use Alert;
+use Illuminate\Support\Facades\Session;
 
 class signinController extends Controller
 {
@@ -28,7 +29,7 @@ class signinController extends Controller
                 //dd($user);
                 if ($user) {
                     Auth::loginUsingId($user->id);
-
+                    
                     return redirect()->route('dashboard');
                 } else {
                     Alert::error('Unable to Login', 'User Not Found on Database');
@@ -47,7 +48,6 @@ class signinController extends Controller
         }
     }
 
-
     //public function logout(Request $request)
     //{
     //Auth::logout();
@@ -59,6 +59,6 @@ class signinController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('/auth/login');
+        return redirect('login');
     }
 }

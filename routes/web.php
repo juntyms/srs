@@ -23,12 +23,14 @@ use App\Http\controllers\vendorController;
 |
 */
 
+//Auth::routes();
+
 Route::get('/login',[signinController::class, 'login'])->name('login');
 Route::post('/login',[signinController::class,'postlogin'])->name('postlogin');
 Route::post('/logout',[signinController::class,'logout'])->name('logout');
 
 Route::get('/dashboard',[dashboardController::class, 'dashboard'])->name('dashboard');
-Route::get('/index',[dashboardController::class,'cord'])->name('cord');
+Route::get('/downloadPDF',[dashboardController::class,'downloadPDF'])->name('downloadPDF');
 
 Route::get('/user/index',[userController::class, 'index'])->name('user.index');
 Route::get('/user/add',[userController::class, 'add'])->name('user.add');
