@@ -20,20 +20,29 @@
             @csrf
             <table class="table table-bordered">
                 <tr>
+                {{ Form::open(['route'=>'user.save']) }} 
                     <th>Username</th>
-                    <th>Password</th>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    
+                    <td>{{ Form::text('username',null) }}</td>
                 </tr>
                 <tr>
-                    {{ Form::open(['route'=>'user.save']) }} 
-                    <td>{{ Form::text('username',null) }}</td>
+                    <th>Password</th>
                     <td>{{ Form::text('password',null) }}</td>
+                </tr>
+                <tr>
+                    <th>Department</th>
+                    <td>{{ Form::select('department_id',$department,null) }}</td>
+                </tr>
+                <tr>
+                    <th>Full Name</th>
                     <td>{{ Form::text('fullname',null) }}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
                     <td>{{ Form::text('email',null) }}</td>
+                </tr>
+                <tr>
                     <td><input type="submit" value="Create User" class="btn btn-info btn-sm"></td>
-                    {{ Form::close() }}
+                {{ Form::close() }}
                 </tr>
             </table>
     </div>

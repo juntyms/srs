@@ -13,10 +13,14 @@
         <p class="text-danger">{{session('msg')}}</p>
         @endif
             @csrf
-            <table class="table table-bordered">
+            <table id="datatablesSimple" class="table table-bordered">
+                <thead>
                 <tr>
-                    <th colspan="2">License Name</th>
+                    <th>License Name</th>
+                    <th>Action</th>
                 </tr>
+                </thead>
+                <tbody>
                 @foreach ( $license as $license)
                 <tr>
                     <td>{{ $license->name }}</td>
@@ -24,7 +28,11 @@
                     <a onclick="return confirm('Are you sure to delete this data?')" href="{{ route('license.delete',$license->id) }}" class="btn btn-danger btn-sm">delete</a></td>
                 </tr>
                 @endforeach
+            </tbody>
             </table>
     </div>
 </div> 
+<script src="{{asset('\bootstrap-5.1.3-dist\js\simple-datatables@latest.js')}}" crossorigin="anonymous"></script>
+<script src="{{asset('\bootstrap-5.1.3-dist\js\datatables-simple-demo.js')}}" crossorigin="anonymous"></script>
+<script src="{{asset('\bootstrap-5.1.3-dist\js\scripts.js')}}" crossorigin="anonymous"></script>
 @endsection

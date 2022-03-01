@@ -1,3 +1,4 @@
+<link rel="icon" href="{{asset('\bootstrap-5.1.3-dist\css\soft.png')}}" type="image/x-icon" />
 <link href="{{asset('\bootstrap-5.1.3-dist\css\styles.css')}}" rel="stylesheet" />
 <script src="{{asset('\bootstrap-5.1.3-dist\js\all.min.js')}}" crossorigin="anonymous"></script>
 

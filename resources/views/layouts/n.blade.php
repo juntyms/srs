@@ -43,21 +43,21 @@
   @include('sweetalert::alert')
   <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="{{ route('dashboard')}}">Software Record System</a>
+    <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="{{ route('login')}}">Logout</a>
-      </div>
-    </div>
-  </nav>
-  <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="{{ route('dashboard')}}">Software Record System</a>
-    <div class="navbar-nav">
-      <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="{{ route('login')}}">Logout</a>
+        <a class="nav-link px-3" href="{{ route('logout')}}" onclick="event.preventDefault();
+        document.getElementById('logout-form').submit();">{{ ("Logout") }}</a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+      </form>
       </div>
     </div>
   </nav>
 
+  </nav>
+  @if (!empty(Auth::user()->privilege->privilege_id))
+  @if(Auth::user()->privilege->privilege_id == 1)
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
@@ -105,38 +105,42 @@
                   Licenses
                 </a>
               </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('privileges.index')}}">
                   Privileges
+
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link">
                 </a>
               </li>
-
               <li class="sb-sidenav-footer">
                 <div class="medium">Logged in as:</div>
-                {{ Auth::user()->username }} - {{ Auth::user()->privilege_name}}
+                {{ Auth::user()->username }} 
               </li>
             </ul>
           </div>
         </nav>
     </div>
-
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  </br>
+  </br>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-4 mb-2 border-bottom">
         <h4 class="h4">Software Record System</h4>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
           </div>
         </div>
+
       </div>
+      @endif
+            @endif
       @yield('content')
   </div>
+  </div>
   </main>
-  </div>
-  </div>
 
 </body>
 <footer class="py-0 my-7 bg-light">

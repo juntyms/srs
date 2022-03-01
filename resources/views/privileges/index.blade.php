@@ -34,12 +34,15 @@
     </div>
     <div class="card-body">
             @csrf
-            <table class="table table-bordered">
+            <table id="datatablesSimple" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
                 <tr>
                     <th>System Administrators</th>
                     <th>Departments Coordinators</th>
                     <th>Action</th>
                 </tr>
+                </thead>
+                <tbody>
                 <tr>
                     @foreach( $userprivileges as $userprivileges )
                     <td>{{ $userprivileges->us->username}}</td>
@@ -51,8 +54,12 @@
                     <td><a onclick="return" href="{{ route('privileges.revoke',$userprivileges->id) }}" class="btn btn-danger btn-sm">Revoke Privilege</a></td>
                 </tr>
                     @endforeach
+                </tbody>
                 </table>
     </div>
     <p style="color:red;"> >> Note: If you want to change user privilege, you have to revoke it first then assign a new privilege.</p>
 
 @endsection
+<script src="{{asset('\bootstrap-5.1.3-dist\js\simple-datatables@latest.js')}}" crossorigin="anonymous"></script>
+<script src="{{asset('\bootstrap-5.1.3-dist\js\datatables-simple-demo.js')}}" crossorigin="anonymous"></script>
+<script src="{{asset('\bootstrap-5.1.3-dist\js\scripts.js')}}" crossorigin="anonymous"></script>

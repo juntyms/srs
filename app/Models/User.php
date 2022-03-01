@@ -22,7 +22,8 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
-        'fullname'
+        'fullname',
+        'department_id'
     ];
 
     /**
@@ -43,4 +44,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function privilege()
+    {
+        return $this->hasOne(userprivilege::class,'user_id','id');
+    }
+
+    public function department()
+    {
+        return $this->hasOne(Department::class,'id','department_id');
+    }
 }
