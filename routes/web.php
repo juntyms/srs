@@ -1,16 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\controllers\signinController;
-use App\Http\controllers\dashboardController;
-use App\Http\controllers\userController;
-use App\Http\controllers\companyController;
-use App\Http\controllers\licenseController;
+use App\Http\Controllers\signinController;
+use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\userController;
+use App\Http\Controllers\companyController;
+use App\Http\Controllers\licenseController;
 use App\Http\Controllers\acyController;
 use App\Http\Controllers\privController;
 use App\Http\Controllers\softController;
 use App\Http\Controllers\softypeController;
-use App\Http\controllers\vendorController;
+use App\Http\Controllers\vendorController;
 
 /*
 |--------------------------------------------------------------------------
