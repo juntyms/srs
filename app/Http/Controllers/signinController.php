@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Alert;
 use App\Models\User;
 use App\Models\Privilege;
+use Illuminate\Http\Request;
 use Adldap\Laravel\Facades\Adldap;
-use Alert;
+use App\Http\Requests\LoginRequest;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class signinController extends Controller
@@ -17,7 +18,7 @@ class signinController extends Controller
         return view('login');
     }
 
-    public function postlogin(Request $request)
+    public function postlogin(LoginRequest $request)
     {
         $username = $request->username . '@sct.edu.om';
         $password = $request->password;
@@ -29,7 +30,7 @@ class signinController extends Controller
                 //dd($user);
                 if ($user) {
                     Auth::loginUsingId($user->id);
-                    
+
                     return redirect()->route('dashboard');
                 } else {
                     Alert::error('Unable to Login', 'User Not Found on Database');
