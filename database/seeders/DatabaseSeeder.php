@@ -18,6 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(LicenseTableSeeder::class);
         $this->call(PrivilegeTableSeeder::class);
         $this->call(SoftwareTypeTableSeeder::class);
-        \App\Models\User::factory(10)->create();
+        //\App\Models\User::factory(10)->create();
     }
 }
