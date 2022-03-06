@@ -1637,6 +1637,7 @@
         },
         {
             "name": "league/commonmark",
+<<<<<<< HEAD
             "version": "1.6.7",
             "source": {
                 "type": "git",
@@ -1647,6 +1648,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/2b8185c13bc9578367a5bf901881d1c1b5bbd09b",
                 "reference": "2b8185c13bc9578367a5bf901881d1c1b5bbd09b",
+=======
+            "version": "2.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/commonmark.git",
+                "reference": "47b015bc4e50fd4438c1ffef6139a1fb65d2ab71"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/47b015bc4e50fd4438c1ffef6139a1fb65d2ab71",
+                "reference": "47b015bc4e50fd4438c1ffef6139a1fb65d2ab71",
+>>>>>>> 2a55db6c4061f56ce50dfe821fe036b7d7bdc9c3
                 "shasum": ""
             },
             "require": {
@@ -1726,7 +1739,93 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2022-01-13T17:18:13+00:00"
+=======
+            "time": "2022-02-26T21:24:45+00:00"
+        },
+        {
+            "name": "league/config",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/config.git",
+                "reference": "a9d39eeeb6cc49d10a6e6c36f22c4c1f4a767f3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/config/zipball/a9d39eeeb6cc49d10a6e6c36f22c4c1f4a767f3e",
+                "reference": "a9d39eeeb6cc49d10a6e6c36f22c4c1f4a767f3e",
+                "shasum": ""
+            },
+            "require": {
+                "dflydev/dot-access-data": "^3.0.1",
+                "nette/schema": "^1.2",
+                "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.90",
+                "phpunit/phpunit": "^9.5.5",
+                "scrutinizer/ocular": "^1.8.1",
+                "unleashedtech/php-coding-standard": "^3.1",
+                "vimeo/psalm": "^4.7.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Config\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Colin O'Dell",
+                    "email": "colinodell@gmail.com",
+                    "homepage": "https://www.colinodell.com",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "Define configuration arrays with strict schemas and access values with dot notation",
+            "homepage": "https://config.thephpleague.com",
+            "keywords": [
+                "array",
+                "config",
+                "configuration",
+                "dot",
+                "dot-access",
+                "nested",
+                "schema"
+            ],
+            "support": {
+                "docs": "https://config.thephpleague.com/",
+                "issues": "https://github.com/thephpleague/config/issues",
+                "rss": "https://github.com/thephpleague/config/releases.atom",
+                "source": "https://github.com/thephpleague/config"
+            },
+            "funding": [
+                {
+                    "url": "https://www.colinodell.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.paypal.me/colinpodell/10.00",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/colinodell",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-08-14T12:15:32+00:00"
+>>>>>>> 2a55db6c4061f56ce50dfe821fe036b7d7bdc9c3
         },
         {
             "name": "league/flysystem",
@@ -5588,6 +5687,7 @@
         },
         {
             "name": "symfony/translation",
+<<<<<<< HEAD
             "version": "v5.4.6",
             "source": {
                 "type": "git",
@@ -5598,6 +5698,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/translation/zipball/a7ca9fdfffb0174209440c2ffa1dee228e15d95b",
                 "reference": "a7ca9fdfffb0174209440c2ffa1dee228e15d95b",
+=======
+            "version": "v6.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/translation.git",
+                "reference": "f6639cb9b5e0c57fe31e3263b900a77eedb0c908"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/f6639cb9b5e0c57fe31e3263b900a77eedb0c908",
+                "reference": "f6639cb9b5e0c57fe31e3263b900a77eedb0c908",
+>>>>>>> 2a55db6c4061f56ce50dfe821fe036b7d7bdc9c3
                 "shasum": ""
             },
             "require": {
@@ -5665,7 +5777,11 @@
             "description": "Provides tools to internationalize your application",
             "homepage": "https://symfony.com",
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/translation/tree/v5.4.6"
+=======
+                "source": "https://github.com/symfony/translation/tree/v6.0.6"
+>>>>>>> 2a55db6c4061f56ce50dfe821fe036b7d7bdc9c3
             },
             "funding": [
                 {
@@ -5681,7 +5797,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2022-03-02T12:56:28+00:00"
+=======
+            "time": "2022-03-02T12:58:14+00:00"
+>>>>>>> 2a55db6c4061f56ce50dfe821fe036b7d7bdc9c3
         },
         {
             "name": "symfony/translation-contracts",
