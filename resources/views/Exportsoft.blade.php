@@ -84,7 +84,7 @@
                 <footer class="py-2 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex justify-content-between small">
-                            <div class="text-muted align-text-middle">Copyright &copy; UTAS 2021</div>
+                            <div class="text-muted align-text-middle">Copyright &copy; UTAS 2022</div>
                         </div>
                     </div>
                 </footer>
