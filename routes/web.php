@@ -31,6 +31,7 @@ Route::post('/logout',[signinController::class,'logout'])->name('logout');
 
 Route::get('/dashboard',[dashboardController::class, 'dashboard'])->name('dashboard');
 Route::get('/downloadPDF',[dashboardController::class,'downloadPDF'])->name('downloadPDF');
+Route::get('/downloadExcel',[dashboardController::class,'exportExcel'])->name('exportExcel');
 
 Route::get('/user/index',[userController::class, 'index'])->name('user.index');
 Route::get('/user/add',[userController::class, 'add'])->name('user.add');

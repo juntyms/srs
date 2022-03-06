@@ -15,6 +15,7 @@ use App\Models\softwareVendors;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Facades\Excel;
 use Barryvdh\DomPDF\Facades;
+use App\Exports\SoftwareExport;
 
 class dashboardController extends Controller
 {
@@ -32,13 +33,17 @@ class dashboardController extends Controller
     public function viewPDF ()
     {
         $software = software::where('department_id','=',Auth::user()->department_id)->get();
-        return view ('ExportPDF')->with('software',$software);
+        return view ('Exportsoft')->with('software',$software);
     }
 
     public function downloadPDF()
     {
         $software = software::where('department_id','=',Auth::user()->department_id)->get();
-        $pdf = PDF::loadView('ExportPDF',compact('software'))->setPaper('a4', 'landscape');
+        $pdf = PDF::loadView('Exportsoft',compact('software'))->setPaper('a4', 'landscape');
         return $pdf->download('software.pdf');
+    }
+    public function exportExcel()
+    {
+        return Excel::download(new SoftwareExport, 'software.xlsx');
     }
 }

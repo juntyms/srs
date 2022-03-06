@@ -1,4 +1,4 @@
-@extends('layouts.n')
+@extends('layouts')
 @section('title','Update Software Type - SRS')
 @section('content')
 <div class="card mb-4 mt-4">

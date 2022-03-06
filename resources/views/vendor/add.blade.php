@@ -1,4 +1,4 @@
-@extends('layouts.n')
+@extends('layouts')
 @section('title','Add Software Vendor - SRS')
 @section('content')
 
