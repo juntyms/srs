@@ -1,4 +1,4 @@
-@extends('layouts.n')
+@extends('layouts')
 @section('title','Software Types - SRS')
 @section('content')
 

@@ -1,6 +1,7 @@
-@extends('layouts.n')
+@extends('layouts')
 @section('title','Assign Privileges - SRS')
 @section('content')
+
 <div class="card mb-4 mt-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>

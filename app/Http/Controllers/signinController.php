@@ -48,14 +48,6 @@ class signinController extends Controller
         }
     }
 
-    //public function logout(Request $request)
-    //{
-    //Auth::logout();
-    //$request->session()->invalidate();
-    //$request->session()->regenerateToken();
-    //session()->forget('postlogin');
-    //return redirect('/login')->with('msg','Logout Successfully');
-    //}
     public function logout()
     {
         Auth::logout();

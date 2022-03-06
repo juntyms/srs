@@ -122,24 +122,15 @@
               </li>
             </ul>
           </div>
+          @endif
+          @endif
         </nav>
-    </div>
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-  </br>
-  </br>
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-4 mb-2 border-bottom">
+  </div>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-2">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-5 pb-4 mb-2 border-bottom">
         <h4 class="h4">Software Record System</h4>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group me-2">
-          </div>
-        </div>
-
       </div>
-      @endif
-            @endif
       @yield('content')
-  </div>
-  </div>
   </main>
 
 </body>

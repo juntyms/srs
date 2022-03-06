@@ -1,20 +1,13 @@
-</br>
-</br>
-</br>
-</br>
-<main class="col-md-8 col-lg-12 px-md-2">
-<h4 class="h4">Software Record System</h4>
-</br>
-      <div class="card mb-4 mt-6">
-        <div class="card-header">
-        <i class="fas fa-table me-1"></i>
-        All Software
-        <a href="{{ route('downloadPDF') }}" class="float-end btn btn-sm btn-primary">Export PDF</a>
-        <a href="{{ route('exportExcel')}}" class="float-end btn btn-sm btn-success">Export Excel</a>
-        </div>
-        <div class="card-body">
-            @csrf
-            <table id="datatablesSimple" class="table table-striped table-bordered" cellspacing="0" width="100%">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<table> 
                 <thead>
                 <tr>
                     <th>Academic Year</th>    
@@ -52,9 +45,5 @@
                 @endforeach
                 </tbody>
             </table>
-        </div>
-    </div>
-</main>
-<script src="{{asset('\bootstrap-5.1.3-dist\js\simple-datatables@latest.js')}}" crossorigin="anonymous"></script>
-<script src="{{asset('\bootstrap-5.1.3-dist\js\datatables-simple-demo.js')}}" crossorigin="anonymous"></script>
-<script src="{{asset('\bootstrap-5.1.3-dist\js\scripts.js')}}" crossorigin="anonymous"></script>
+</body>
+</html>
