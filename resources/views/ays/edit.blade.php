@@ -22,12 +22,11 @@
             <table class="table table-bordered">
                 <tr>
                     <th>Academic Year</th>
-                    <th>Action</th>
+                    {{ Form::model($ays,['route'=>['ays.update',$ays->id]]) }} 
+                    <th>{{ Form::text('name',null, ['class'=>'form-control']) }}</th>
                 </tr>
                 <tr>
-                {{ Form::model($ays,['route'=>['ays.update',$ays->id]]) }} 
-                    <td>{{ Form::text('name',null) }}</td>
-                    <td><input type="submit" value="Update Academic Year" class="btn btn-info btn-sm"></td>
+                    <td colspan="2"><input type="submit" value="Save Changes" class="btn btn-info btn-sm"></td>
                 </tr>
             </table>
     </div>

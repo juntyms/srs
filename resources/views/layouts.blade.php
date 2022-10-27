@@ -191,8 +191,8 @@
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted align-text-middle">Copyright &copy; UTAS 2022</div>
+                        <div class="d-flex align-items-center justify-content-between small">                        
+                            <div class="text-muted align-text-middle">&copy; Copyright  Copyright UTAS - Salalah. All Rights Reserved - Developed By: ETC Software Development Team</div>
                             <div>
                                 <a href="#"></a>
                                 <a href="#"></a>

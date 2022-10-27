@@ -24,14 +24,13 @@ class ayUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>['required','unique:ays','min:5']
+            'name'=>['required','unique:ays']
         ];
     }
 
     public function messages()
     {
         return ['name.required'=>'Academic Year can not be blank',
-                'name.unique'=>'Academic Year already exists',
-                'name.min'=>'Academic Year must be at least 5 characters'];
+                'name.unique'=>'Academic Year already exists'];
     }
 }

@@ -19,10 +19,14 @@
                 <tr>
                 {{ Form::model(['route'=>'privileges.assign']) }}
                     <th>Username:</th>
-                    <th>{{ Form::select('user_id',$user,null)}}</th>
+                    <th>{{ Form::select('user_id',$user,null, ['class'=>'form-select'])}}</th>
+                </tr>
+                <tr>
                     <th>Privilege:</th> 
-                    <th>{{ Form::select('privilege_id',$privilege,null)}}</th>
-                    <th><input type="submit" value="Assign Privilege" class="btn btn-info btn-sm"></th>     
+                    <th>{{ Form::select('privilege_id',$privilege, null, ['class'=>'form-select'])}}</th>
+                </tr>
+                <tr>
+                <th colspan="2"><input type="submit" value="Assign Privilege" class="btn btn-info btn-sm"></th>     
                 </tr>
                 {{ Form::close() }}
             </table>

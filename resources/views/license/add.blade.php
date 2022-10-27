@@ -19,16 +19,15 @@
         @endif
             @csrf
             <table class="table table-bordered">
+            {{ Form::open(['route'=>'license.save']) }} 
                 <tr>
                     <th>License Name</th>
-                    <th>Action</th>      
+                    <th>{{ Form::text('name',null, ['class'=>'form-control']) }}</th>
                 </tr>
                 <tr>
-                    {{ Form::open(['route'=>'license.save']) }} 
-                    <td>{{ Form::text('name',null) }}</td>
-                    <td><input type="submit" value="Add License" class="btn btn-info btn-sm"></td>
-                    {{ Form::close() }}
+                    <th colspan="2"><input type="submit" value="Add License" class="btn btn-info btn-sm"></th>
                 </tr>
+            {{ Form::close() }}
             </table>
     </div>
 </div> 

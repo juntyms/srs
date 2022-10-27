@@ -24,13 +24,12 @@ class typeRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>['required','unique:software_types','min:5']
+            'name'=>['required','unique:software_types']
         ];
     }
     public function messages()
     {
         return ['name.required'=>'Software Type can not be blank',
-                'name.unique'=>'Software Type already exists',
-                'name.min'=>'Software Type must be at least 5 characters'];
+                'name.unique'=>'Software Type already exists'];
     }
 }

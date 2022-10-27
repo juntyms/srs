@@ -21,12 +21,11 @@
             <table class="table table-bordered">
                 <tr>
                     <th>Academic Year</th>
-                    <th>Action</th>      
+                    {{ Form::open(['route'=>'ays.save']) }} 
+                    <th>{{ Form::text('name',null, ['class'=>'form-control']) }}</th>
                 </tr>
                 <tr>
-                    {{ Form::open(['route'=>'ays.save']) }} 
-                    <td>{{ Form::text('name',null) }}</td>
-                    <td><input type="submit" value="Add Academic Year" class="btn btn-info btn-sm"></td>
+                    <td colspan="2"><input type="submit" value="Add Academic Year" class="btn btn-info btn-sm"></td>
                     {{ Form::close() }}
                 </tr>
             </table>

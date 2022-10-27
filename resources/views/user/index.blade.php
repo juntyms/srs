@@ -33,6 +33,7 @@
                     <td>{{ $user->email }}</td>
                     <td><a href="{{ route('user.edit',$user->id)}}" class="btn btn-info btn-sm">Edit</a>
                     <a onclick="return confirm('Are you sure to delete this data?')" href="{{ route('user.delete',$user->id) }}" class="btn btn-danger btn-sm">delete</a></td>
+                    
                 </tr>
                 @endforeach
             </tbody>

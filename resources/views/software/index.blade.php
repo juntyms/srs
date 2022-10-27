@@ -6,6 +6,8 @@
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
         All Software
+        <a href="{{ route('downloadPDF') }}" class="float-end btn btn-sm btn-info">export PDF</a>
+        <a href="{{ route('exportExcel') }}" class="float-end btn btn-sm btn-info">export XLS</a>
         <a href="{{ route('software.add')}}" class="float-end btn btn-sm btn-success">Add Software</a>
     </div>
     <div class="card-body">

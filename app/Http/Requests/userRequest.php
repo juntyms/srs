@@ -24,25 +24,17 @@ class userRequest extends FormRequest
     public function rules()
     {
         return [
-                'username'=>['required','min:2'],
+                'username'=>['required'],
                 'email'=>'required',
-                'fullname'=>['required','min:2'],
+                'fullname'=>['required'],
                 'department_id'=>'required'
         ];
     }
     public function messages()
     {
         return ['username.required'=>'Username can not be blank',
-                'username.min'=>'Username must be at least 2 characters',
-
-                'password.required'=>'Password can not be blank',
-                'password.min'=>'Password must be at least 2 characters',
-
                 'email.required'=>'Email Address can not be blank',
-
                 'fullname.required'=>'User Full name can not be blank',
-                'fullname.min'=>'User Full name must be at least 5 characters',
-
                 'department_id'=>'You have to choose department name'
                 ];
     }
