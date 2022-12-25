@@ -39,6 +39,7 @@ class dashboardController extends Controller
     public function downloadPDF()
     {
         $software = software::where('department_id','=',Auth::user()->department_id)->get();
+        
         $pdf = PDF::loadView('Exportsoft',compact('software'))->setPaper('a4', 'landscape');
         return $pdf->download('software.pdf');
     }

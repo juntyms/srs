@@ -23,16 +23,16 @@
                 @foreach ( $SoftwareType as $SoftwareType)
                 <tr>
                     <td>{{ $SoftwareType->name }}</td>
-                    <td><a href="{{ route('SoftwareType.edit',$SoftwareType->id)}}" class="btn btn-info btn-sm">Edit</a>
-                    <a onclick="return confirm('Are you sure to delete this data?')" href="{{ route('SoftwareType.delete',$SoftwareType->id) }}" class="btn btn-danger btn-sm">delete</a></td>
+                    <td>
+                        <a href="{{ route('SoftwareType.edit',$SoftwareType->id)}}" class="btn btn-info btn-sm">Edit</a>
+                        @if(Auth::user()->privilege->privilege_id == 1)
+                        <a onclick="return confirm('Are you sure to delete this data?')" href="{{ route('SoftwareType.delete',$SoftwareType->id) }}" class="btn btn-danger btn-sm">delete</a>
+                        @endif
+                    </td>
                 </tr>
                 @endforeach
                 </tbody>
             </table>
     </div>
 </div> 
-<script src="{{asset('\bootstrap-5.1.3-dist\js\simple-datatables@latest.js')}}" crossorigin="anonymous"></script>
-<script src="{{asset('\bootstrap-5.1.3-dist\js\datatables-simple-demo.js')}}" crossorigin="anonymous"></script>
-<script src="{{asset('\bootstrap-5.1.3-dist\js\scripts.js')}}" crossorigin="anonymous"></script>
-
 @endsection

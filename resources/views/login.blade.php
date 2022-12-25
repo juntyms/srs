@@ -13,7 +13,8 @@
                         <div class="col-lg-5">
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header">
-                                    <center><img src="{{asset('\bootstrap-5.1.3-dist\css\soft.png')}}" alt="SRS" width="65" height="70"></center>
+</br>
+                                    <center><img src="{{asset('\bootstrap-5.1.3-dist\css\logo.png')}}" alt="SRS" width="280" height="100"></center>
                                     <h4 class="text-center font-weight-light my-4">Software Record System - Login</h4>
                                     <div class="card-body">
                                         @if(Session::has('msg'))
@@ -50,6 +51,6 @@
     </div>
 </body>
 <script src="{{asset('\bootstrap-5.1.3-dist\js\scripts.js')}}" crossorigin="anonymous"></script>
-<footer class="py-0 fixed-bottom my-8 bg-light">
-    <p class="text-center text-muted">© 2022 UTAS-Salalah </p>
+<footer class="py-0 fixed-bottom my-8 bg-light small">
+<p class="text-center text-muted align-text-middle small">&copy; Copyright  Copyright UTAS - Salalah. All Rights Reserved - Developed By: ETC Software Development Team</p>                        
 </footer>

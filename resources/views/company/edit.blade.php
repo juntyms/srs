@@ -20,32 +20,35 @@
         @endif
             @csrf
             <table class="table table-bordered">
+            {{ Form::model($company,['route'=>['company.update',$company->id]]) }}  
                 <tr>
                     <th>Company Name</th>
-                    <th>Email</th>
-                    <th>Contact No. </th>         
+                    <th>{{ Form::text('name',null, ['class'=>'form-control']) }}</th>
                 </tr>
                 <tr>
-                {{ Form::model($company,['route'=>['company.update',$company->id]]) }}  
-                    <td>{{ Form::text('name',null) }}</td>
-                    <td>{{ Form::text('email',null) }}</td> 
-                    <td>{{ Form::text('contact_no',null) }}</td>
+                    <th>Email</th>
+                    <th>{{ Form::text('email',null, ['class'=>'form-control']) }}</th> 
+                </tr>
+                <tr>
+                    <th>Contact No. </th>         
+                    <th>{{ Form::text('contact_no',null, ['class'=>'form-control']) }}</th>
                 </tr>
                 <tr>
                     <th>Company Address </th>
+                    <th>{{ Form::text('address',null, ['class'=>'form-control']) }}</th>
+                </tr>
+                <tr>
                     <th>GSM Number</th>
-                    <th>Contact Person</th>          
+                    <th>{{ Form::text('gsm',null, ['class'=>'form-control']) }}</th>
                 </tr>
                 <tr>
-                    <td>{{ Form::text('address',null) }}</td>
-                    <td>{{ Form::text('gsm',null) }}</td>
-                    <td>{{ Form::text('contact_person',null) }}</td> 
+                    <th>Contact Person</th>
+                    <th>{{ Form::text('contact_person',null, ['class'=>'form-control']) }}</th>           
                 </tr>
-                <tr>
-   
-                    <th style="text-align:right;" colspan="3"><input type="submit" value="Update Company" class="btn btn-info btn-sm"></th>
+                <tr> 
+                    <th colspan="2"><input type="submit" value="Save Changes" class="btn btn-info btn-sm"></th>
                 </tr>
-                {{ Form::close() }} 
+            {{ Form::close() }} 
             </table>
     </div>
 </div> 

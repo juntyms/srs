@@ -22,26 +22,26 @@
                 <tr>
                 {{ Form::open(['route'=>'user.save']) }} 
                     <th>Username</th>
-                    <td>{{ Form::text('username',null) }}</td>
+                    <td>{{ Form::text('username',null, ['class'=>'form-control']) }}</td>
                 </tr>
                 <tr>
                     <th>Password</th>
-                    <td>{{ Form::text('password',null) }}</td>
+                    <td>{{ Form::text('password',null, ['class'=>'form-control']) }}</td>
                 </tr>
                 <tr>
                     <th>Department</th>
-                    <td>{{ Form::select('department_id',$department,null) }}</td>
+                    <td>{{ Form::select('department_id',$department, null, ['class'=>'form-select','placeholder'=>'Select Department','required']) }}</td>
                 </tr>
                 <tr>
                     <th>Full Name</th>
-                    <td>{{ Form::text('fullname',null) }}</td>
+                    <td>{{ Form::text('fullname',null, ['class'=>'form-control']) }}</td>
                 </tr>
                 <tr>
                     <th>Email</th>
-                    <td>{{ Form::text('email',null) }}</td>
+                    <td>{{ Form::text('email',null, ['class'=>'form-control']) }}</td>
                 </tr>
                 <tr>
-                    <td><input type="submit" value="Create User" class="btn btn-info btn-sm"></td>
+                    <td colspan="2"><input type="submit" value="Add User" class="btn btn-info btn-sm"></td>
                 {{ Form::close() }}
                 </tr>
             </table>

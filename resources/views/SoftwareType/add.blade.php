@@ -19,13 +19,15 @@
         @endif
             @csrf
             <table class="table table-bordered">
+            {{ Form::open(['route'=>'SoftwareType.save']) }} 
                 <tr>
-                {{ Form::open(['route'=>'SoftwareType.save']) }} 
                     <th>Software Type :</th>
-                    <th>{{ Form::text('name',null) }}</th>
-                    <th><input type="submit" value="Add Software Type" class="btn btn-info btn-sm"></th>      
+                    <th>{{ Form::text('name',null, ['class'=>'form-control']) }}</th>
                 </tr>
-                {{ Form::close() }}
+                <tr>
+                    <th colspan="2"><input type="submit" value="Add Type" class="btn btn-info btn-sm"></th>      
+                </tr>
+            {{ Form::close() }}
             </table>
     </div>
 </div> 

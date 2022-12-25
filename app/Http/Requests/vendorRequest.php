@@ -24,13 +24,12 @@ class vendorRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>['required','unique:software_vendors','min:5']
+            'name'=>['required','unique:software_vendors']
         ];
     }
     public function messages()
     {
         return ['name.required'=>'Vendor name can not be blank',
-                'name.unique'=>'Vendor name already exists',
-                'name.min'=>'Vendor name must be at least 5 characters'];
+                'name.unique'=>'Vendor name already exists'];
     }
 }

@@ -16,6 +16,8 @@ class PrivilegeTableSeeder extends Seeder
     {
         \DB::table('privileges')->delete();
         Privilege::create(['name'=>'Administrator']);
-        Privilege::create(['name'=>'Department Coordinator']);        
+        Privilege::create(['name'=>'Department Coordinator']);
+        Privilege::create(['name'=>'Technician']);
+        
     }
 }

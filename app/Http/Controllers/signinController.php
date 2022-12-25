@@ -18,8 +18,27 @@ class signinController extends Controller
         return view('login');
     }
 
-    public function postlogin(LoginRequest $request)
+    public function postlogin ( LoginRequest $request)
     {
+            $credentials = $request->validate([
+                'username' => ['required'],
+                'password' => ['required'],
+            ]);
+     
+            if (Auth::attempt($credentials)) {
+                $request->session()->regenerate();
+     
+                return redirect()->route('dashboard');
+            }
+     
+            return back()->withErrors([
+                'username' => 'The provided credentials do not match our records.',
+            ])->onlyInput('username');
+    }
+/*
+    public function posttlogin(LoginRequest $request)
+    {
+        //dd($request->all());
         $username = $request->username . '@sct.edu.om';
         $password = $request->password;
 
@@ -48,6 +67,7 @@ class signinController extends Controller
             return redirect()->back();
         }
     }
+    */
 
     public function logout()
     {

@@ -48,7 +48,7 @@
         </div>
         <div class="card-body">
             @csrf
-            <table class="table table-bordered">
+            <table class="table table-striped table-bordered">
                 <tr>
                     <th>Academic Year</th>    
                     <th>Software Name</th>

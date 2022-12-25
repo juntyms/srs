@@ -24,14 +24,13 @@ class licenseRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>['required','unique:licenses','min:5']
+            'name'=>['required','unique:licenses']
         ];
     }
 
     public function messages()
     {
         return ['name.required'=>'License name can not be blank',
-                'name.unique'=>'License name already exists',
-                'name.min'=>'License name must be at least 5 characters'];
+                'name.unique'=>'License name already exists'];
     }
 }

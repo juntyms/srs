@@ -26,7 +26,7 @@ class CreateSoftwaresTable extends Migration
             $table->unsignedBigInteger('company_id');
             $table->foreign('company_id')->references('id')->on('companies');
             $table->datetime('purchase_date');
-            $table->decimal('price', 8, 3);
+            $table->decimal('price', 8, 3)->nullable();
             $table->datetime('expiry_date');
             $table->datetime('warranty_end_date');
             $table->unsignedBigInteger('license_id');
