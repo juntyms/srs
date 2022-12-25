@@ -1,16 +1,15 @@
-</br>
-</br>
-</br>
-</br>
 <main class="col-md-8 col-lg-12 px-md-2">
-<h4 class="h4">Software Record System</h4>
-</br>
-      <div class="card mb-4 mt-6">
+    <div class="card mb-2 mt-6">
         <div class="card-header">
-        <i class="fas fa-table me-1"></i>
-        All Software
-        <a href="{{ route('downloadPDF') }}" class="float-end btn btn-sm btn-primary">Export PDF</a>
-        <a href="{{ route('exportExcel')}}" class="float-end btn btn-sm btn-success">Export Excel</a>
+            <i class="fas fa-table me-1"></i>
+            All Software
+            <a href="{{ route('downloadPDF') }}" class="float-end btn btn-sm btn-primary">Export PDF</a>
+            <a href="{{ route('exportExcel')}}" class="float-end btn btn-sm btn-success">Export Excel</a>
+            @if (!empty(Auth::user()->privilege->privilege_id))
+            @if(Auth::user()->privilege->privilege_id == 2)
+            <a href="{{ route('software.add')}}" class="float-end btn btn-sm btn-success">Add Software</a>
+            @endif
+            @endif
         </div>
         <div class="card-body">
             @csrf
@@ -55,6 +54,3 @@
         </div>
     </div>
 </main>
-<script src="{{asset('\bootstrap-5.1.3-dist\js\simple-datatables@latest.js')}}" crossorigin="anonymous"></script>
-<script src="{{asset('\bootstrap-5.1.3-dist\js\datatables-simple-demo.js')}}" crossorigin="anonymous"></script>
-<script src="{{asset('\bootstrap-5.1.3-dist\js\scripts.js')}}" crossorigin="anonymous"></script>

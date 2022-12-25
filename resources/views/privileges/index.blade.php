@@ -53,8 +53,10 @@
                     <td>{{ $userprivileges->us->username}}</td>
                     @if($userprivileges->privilege_id==1)
                     <td>System Administrator</td>
-                    @else
+                    @elseif($userprivileges->privilege_id==2)
                     <td>Department Coordinator</td>
+                    @else
+                    <td>Technician</td>
                     @endif
                     <td><a onclick="return" href="{{ route('privileges.revoke',$userprivileges->id) }}" class="btn btn-danger btn-sm">Revoke Privilege</a></td>
                 </tr>
@@ -65,6 +67,3 @@
     <p style="color:red;"> >> Note: If you want to change user privilege, you have to revoke it first then assign a new privilege.</p>
 
 @endsection
-<script src="{{asset('\bootstrap-5.1.3-dist\js\simple-datatables@latest.js')}}" crossorigin="anonymous"></script>
-<script src="{{asset('\bootstrap-5.1.3-dist\js\datatables-simple-demo.js')}}" crossorigin="anonymous"></script>
-<script src="{{asset('\bootstrap-5.1.3-dist\js\scripts.js')}}" crossorigin="anonymous"></script>

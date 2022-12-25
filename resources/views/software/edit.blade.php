@@ -55,7 +55,7 @@
                     <th>License :</th>
                     <td>{{ Form::select('license_id',$License,null, ['class'=>'form-select','placeholder'=>'Select License','required'] ) }}</td>
                     <th>Available :</th>
-                    <td>{{ Form::select ('installer_is_available', ['1' => 'Yes', '0' => 'No'], 2 , ['id' =>'installer_is_available']) }}</td>
+                    <td>{{ Form::select ('installer_is_available', ['1' => 'Yes', '0' => 'No'], 2 , ['class'=>'form-select','id' =>'installer_is_available'],['class'=>'form-select']) }}</td>
                 </tr>
                 <tr>
                     <th>Custodian Name :</th>

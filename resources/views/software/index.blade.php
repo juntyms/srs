@@ -1,7 +1,6 @@
 @extends('layouts')
 @section('title','All Software - SRS')
 @section('content')
-
 <div class="card mb-4 mt-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
@@ -52,7 +51,9 @@
                     <td>{{ ($software->installer_is_available)? 'Yes':'No' }}</td>
                     <td>{{ $software->custodian_name }}</td> 
                     <td><a href="{{ route('software.edit',$software->id)}}" class="btn btn-info btn-sm">Edit</a>
+                        @if(Auth::user()->privilege->privilege_id == 1)
                         <a onclick="return confirm('Are you sure to delete this data?')" href="{{ route('software.delete',$software->id) }}" class="btn btn-danger btn-sm">delete</a>
+                        @endif
                     </td>
                 </tr> 
                 @endforeach 
@@ -60,7 +61,4 @@
             </table>
 </div>
 </div>
-<script src="{{asset('\bootstrap-5.1.3-dist\js\simple-datatables@latest.js')}}" crossorigin="anonymous"></script>
-<script src="{{asset('\bootstrap-5.1.3-dist\js\datatables-simple-demo.js')}}" crossorigin="anonymous"></script>
-<script src="{{asset('\bootstrap-5.1.3-dist\js\scripts.js')}}" crossorigin="anonymous"></script>
 @endsection

@@ -12,12 +12,13 @@ use App\Models\License;
 use App\Models\ays;
 use App\Models\softwareVendors;
 use App\Http\Requests\softwareRequest;
+use Auth;
 
 class softController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth']);
     }
     
     public function index()
@@ -29,6 +30,8 @@ class softController extends Controller
 
     public function add()
     {
+        if(Auth::user()->privilege->privilege_id == 1)
+        {
         $ays = ays::where('is_active',1)->pluck('name', 'id');
         $departments = Department::pluck('name','id');
         $softwareVendors=softwareVendors::pluck('name','id');
@@ -41,6 +44,22 @@ class softController extends Controller
             ->with('SoftwareType',$SoftwareTypes)
             ->with('company',$company)
             ->with('License',$Licenses);
+        }
+        else
+        {
+        $ays = ays::where('is_active',1)->pluck('name', 'id');
+        $departments = Department::where('id','=',Auth::user()->department_id)->pluck('name','id');
+        $softwareVendors=softwareVendors::pluck('name','id');
+        $SoftwareTypes=SoftwareType::pluck('name','id');
+        $company=company::pluck('name','id');
+        $Licenses=License::pluck('name','id');
+        return view ('software.add')->with('ays',$ays)
+            ->with('department',$departments)
+            ->with('softwareVendors',$softwareVendors)
+            ->with('SoftwareType',$SoftwareTypes)
+            ->with('company',$company)
+            ->with('License',$Licenses);
+        }
     }
 
     public function save(softwareRequest $request)
@@ -64,12 +83,13 @@ class softController extends Controller
         $SoftwareTypes=SoftwareType::pluck('name','id');
         $company=company::pluck('name','id');
         $Licenses=License::pluck('name','id');
-        return view('software.edit')->with('software',$software)->with('ays',$ays)
-                    ->with('department',$departments)
-                    ->with('softwareVendors',$softwareVendors)
-                    ->with('SoftwareType',$SoftwareTypes)
-                    ->with('company',$company)
-                    ->with('License',$Licenses);
+        return view('software.edit')->with('software',$software)
+                                    ->with('ays',$ays)
+                                    ->with('department',$departments)
+                                    ->with('softwareVendors',$softwareVendors)
+                                    ->with('SoftwareType',$SoftwareTypes)
+                                    ->with('company',$company)
+                                    ->with('License',$Licenses);
     }
     
     public function update(softwareRequest $request, $id)

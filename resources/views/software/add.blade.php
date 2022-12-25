@@ -41,7 +41,7 @@
                 </tr>
                 <tr>
                     <th>Purchase Date :</th>                  
-                    <td>{{ Form::date('purchase_date',null, ['class'=>'form-control']) }}</td>
+                    <td>{{ Form::date('purchase_date',null,['class'=>'form-control']) }}</td>
                     <th>Price :</th>
                     <td>{{ Form::text('price',null, ['class'=>'form-control']) }}</td>                   
                 </tr>
@@ -55,7 +55,7 @@
                     <th>License :</th>
                     <td>{{ Form::select('license_id',$License,null, ['class'=>'form-select','placeholder'=>'Select License','required'] ) }}</td>
                     <th>Available :</th>
-                    <td>{{ Form::select ('installer_is_available', ['1' => 'Yes', '0' => 'No'], 2 , ['id' =>'installer_is_available']) }}</td>
+                    <td>{{ Form::select ('installer_is_available', ['1' => 'Yes', '0' => 'No'], 2 , ['class'=>'form-select','id' =>'installer_is_available']) }}</td>
                 </tr>
                 <tr>
                     <th>Custodian Name :</th>

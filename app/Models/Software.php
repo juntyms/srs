@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Software extends Model
 {
@@ -53,6 +54,39 @@ class Software extends Model
     public function li()
     {
         return $this->hasOne(License::class,'id','license_id');
+    }
+
+    public function getPurchaseDateAttribute($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d');
+
+    }
+
+    public function formPurchaseDateAtrributw($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d');
+    }
+
+    public function getExpiryDateAttribute($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d');
+
+    }
+
+    public function formExpiryDateAtrributw($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d');
+    }
+
+    public function getWarrantyEndDateAttribute($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d');
+
+    }
+
+    public function formWarrantyEndDateAtrributw($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d');
     }
     
 }

@@ -51,6 +51,6 @@
     </div>
 </body>
 <script src="{{asset('\bootstrap-5.1.3-dist\js\scripts.js')}}" crossorigin="anonymous"></script>
-<footer class="py-0 fixed-bottom my-8 bg-light">
-    <p class="text-center text-muted">&copy; Copyright  Copyright UTAS - Salalah. All Rights Reserved - Developed By: ETC Software Development Team</p>
+<footer class="py-0 fixed-bottom my-8 bg-light small">
+<p class="text-center text-muted align-text-middle small">&copy; Copyright  Copyright UTAS - Salalah. All Rights Reserved - Developed By: ETC Software Development Team</p>                        
 </footer>
