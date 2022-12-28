@@ -6,7 +6,9 @@
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
         View Software Types
+        @if(Auth::user()->privilege->privilege_id == 1)
         <a href="{{ route('SoftwareType.add')}}" class="float-end btn btn-sm btn-success">Add Software Type</a>
+        @endif
     </div>
     <div class="card-body">
     @if(Session::has('msg'))

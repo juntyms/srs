@@ -18,7 +18,7 @@ class signinController extends Controller
         return view('login');
     }
 
-    public function postlogin ( LoginRequest $request)
+    public function posttlogin ( LoginRequest $request)
     {
             $credentials = $request->validate([
                 'username' => ['required'],
@@ -36,7 +36,7 @@ class signinController extends Controller
             ])->onlyInput('username');
     }
 
-    public function posttlogin(LoginRequest $request)
+    public function postlogin(LoginRequest $request)
     {
         //dd($request->all());
         $username = $request->username . '@sct.edu.om';
