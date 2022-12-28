@@ -5,7 +5,9 @@
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
         View Licenses
-        <a href="{{ route('license.add')}}" class="float-end btn btn-sm btn-success">Create New License</a>
+        @if(Auth::user()->privilege->privilege_id == 1)
+        <a href="{{ route('license.add')}}" class="float-end btn btn-sm btn-success">Add New License</a>
+        @endif
     </div>
     <div class="card-body">
     @if(Session::has('msg'))
