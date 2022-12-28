@@ -88,7 +88,6 @@ Route::get('/vendor/add', [vendorController::class, 'add'])->name('vendor.add');
 Route::post('/vendor/add', [vendorController::class, 'save'])->name('vendor.save');
 Route::get('/vendor/{id}/edit', [vendorController::class, 'edit'])->name('vendor.edit');
 Route::post('/vendor/{id}/edit', [vendorController::class, 'update'])->name('vendor.update');
-});
 
 Route::get('/user/index', [userController::class, 'index'])->name('user.index');
 Route::get('/user/add', [userController::class, 'add'])->name('user.add');
@@ -96,3 +95,6 @@ Route::post('/user/add', [userController::class, 'save'])->name('user.save');
 Route::get('/user/{id}/edit', [userController::class, 'edit'])->name('user.edit');
 Route::post('/user/{id}/edit', [userController::class, 'update'])->name('user.update');
 Route::get('/user/{id}/delete', [userController::class, 'delete'])->name('user.delete');
+
+});
+

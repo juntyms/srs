@@ -3,7 +3,6 @@
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
             All Software
-            <a href="{{ route('downloadPDF') }}" class="float-end btn btn-sm btn-primary">Export PDF</a>
             <a href="{{ route('exportExcel')}}" class="float-end btn btn-sm btn-success">Export Excel</a>
             @if (!empty(Auth::user()->privilege->privilege_id))
             @if(Auth::user()->privilege->privilege_id == 2)

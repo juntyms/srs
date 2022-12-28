@@ -16,19 +16,21 @@
             <table id="datatablesSimple" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>                <tr>
                     <th>Software Types</th>
+                    @if(Auth::user()->privilege->privilege_id == 1)
                     <th>Action</th>
+                    @endif
                 </tr>
                 </thead>
                 <tbody>
                 @foreach ( $SoftwareType as $SoftwareType)
                 <tr>
                     <td>{{ $SoftwareType->name }}</td>
+                    @if(Auth::user()->privilege->privilege_id == 1)
                     <td>
                         <a href="{{ route('SoftwareType.edit',$SoftwareType->id)}}" class="btn btn-info btn-sm">Edit</a>
-                        @if(Auth::user()->privilege->privilege_id == 1)
                         <a onclick="return confirm('Are you sure to delete this data?')" href="{{ route('SoftwareType.delete',$SoftwareType->id) }}" class="btn btn-danger btn-sm">delete</a>
-                        @endif
                     </td>
+                    @endif
                 </tr>
                 @endforeach
                 </tbody>

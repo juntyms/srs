@@ -35,7 +35,7 @@ class signinController extends Controller
                 'username' => 'The provided credentials do not match our records.',
             ])->onlyInput('username');
     }
-/*
+
     public function posttlogin(LoginRequest $request)
     {
         //dd($request->all());
@@ -67,7 +67,7 @@ class signinController extends Controller
             return redirect()->back();
         }
     }
-    */
+    
 
     public function logout()
     {
