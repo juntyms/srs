@@ -5,7 +5,9 @@
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
         View Licenses
-        <a href="{{ route('license.add')}}" class="float-end btn btn-sm btn-success">Create New License</a>
+        @if(Auth::user()->privilege->privilege_id == 1)
+        <a href="{{ route('license.add')}}" class="float-end btn btn-sm btn-success">Add New License</a>
+        @endif
     </div>
     <div class="card-body">
     @if(Session::has('msg'))
@@ -16,18 +18,22 @@
                 <thead>
                 <tr>
                     <th>License Name</th>
+                    @if(Auth::user()->privilege->privilege_id == 1)
                     <th>Action</th>
+                    @endif
                 </tr>
                 </thead>
                 <tbody>
                 @foreach ( $license as $license)
                 <tr>
                     <td>{{ $license->name }}</td>
-                    <td><a href="{{ route('license.edit',$license->id)}}" class="btn btn-info btn-sm">Edit</a>
                     @if(Auth::user()->privilege->privilege_id == 1)
-                    <a onclick="return confirm('Are you sure to delete this data?')" href="{{ route('license.delete',$license->id) }}" class="btn btn-danger btn-sm">delete</a>
+                    <td>
+                        <a href="{{ route('license.edit',$license->id)}}" class="btn btn-info btn-sm">Edit</a>
+                        <a onclick="return confirm('Are you sure to delete this data?')" href="{{ route('license.delete',$license->id) }}" class="btn btn-danger btn-sm">delete</a>
+                    </td>
                     @endif
-                </td>
+
                 </tr>
                 @endforeach
             </tbody>

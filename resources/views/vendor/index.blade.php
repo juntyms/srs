@@ -6,7 +6,9 @@
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
         View Software Vendor
+        @if(Auth::user()->privilege->privilege_id == 1)
         <a href="{{ route('vendor.add')}}" class="float-end btn btn-sm btn-success">Add New Vendor</a>
+        @endif
     </div>
     <div class="card-body">
     @if(Session::has('msg'))
@@ -17,14 +19,18 @@
                 <thead>
                 <tr>
                     <th>Software Vendor</th>
+                    @if(Auth::user()->privilege->privilege_id == 1)
                     <th>Action</th>
+                    @endif 
                 </tr>
                 </thead>
                 <tbody>
                 @foreach ( $vendor as $vendor)
                 <tr>
                     <td>{{ $vendor->name }}</td>
+                    @if(Auth::user()->privilege->privilege_id == 1)
                     <td><a href="{{ route('vendor.edit',$vendor->id)}}" class="btn btn-info btn-sm">Edit</a></td>
+                    @endif
                 </tr>
                 @endforeach
                 </tbody>
