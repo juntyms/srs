@@ -18,7 +18,7 @@ class signinController extends Controller
         return view('login');
     }
 
-    public function postlogin ( LoginRequest $request)
+    public function posttlogin ( LoginRequest $request)
     {
             $credentials = $request->validate([
                 'username' => ['required'],
@@ -35,8 +35,8 @@ class signinController extends Controller
                 'username' => 'The provided credentials do not match our records.',
             ])->onlyInput('username');
     }
-/*
-    public function posttlogin(LoginRequest $request)
+
+    public function postlogin(LoginRequest $request)
     {
         //dd($request->all());
         $username = $request->username . '@sct.edu.om';
@@ -67,7 +67,7 @@ class signinController extends Controller
             return redirect()->back();
         }
     }
-    */
+    
 
     public function logout()
     {
