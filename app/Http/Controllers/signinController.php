@@ -18,7 +18,7 @@ class signinController extends Controller
         return view('login');
     }
 
-    public function posttlogin ( LoginRequest $request)
+    public function postloginn ( LoginRequest $request)
     {
             $credentials = $request->validate([
                 'username' => ['required'],
