@@ -25,6 +25,8 @@ class CreateSoftwaresTable extends Migration
             $table->foreign('software_type_id')->references('id')->on('software_types');
             $table->unsignedBigInteger('company_id');
 //            $table->foreign('company_id')->references('id')->on('companies');
+            $table->string('version')->nullable();
+            $table->string('quantity')->nullable();
             $table->datetime('purchase_date')->nullable();
             $table->decimal('price', 8, 3)->nullable();
             $table->datetime('expiry_date')->nullable();
