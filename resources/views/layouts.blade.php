@@ -65,9 +65,9 @@
                             @endif
                             <li><a class="dropdown-item" href="{{ route('company.index')}}">Companies</a></li>
                             @if(Auth::user()->privilege->privilege_id == 1)
-                            <li><a class="dropdown-item" href="{{ route('license.index')}}">Licenses</a></li>
+                            <li><a class="dropdown-item" href="{{ route('subscription.index')}}">Subscription</a></li>
                             <li><a class="dropdown-item" href="{{ route('SoftwareType.index')}}">Software Types</a></li>
-                            <li><a class="dropdown-item" href="{{ route('vendor.index')}}">Software Vendors</a></li>
+                            <li><a class="dropdown-item" href="{{ route('supplier.index')}}">Suppliers</a></li>
                             @endif
                         </ul>
                     </li>

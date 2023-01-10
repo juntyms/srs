@@ -50,9 +50,9 @@
         </div>
         <div class="col-xl-3 col-md-6">
             <div class="card bg-light text-dark mb-4">
-                <div class="card-body">Software Vendors</div>
+                <div class="card-body">Suppliers</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-dark stretched-link" href="{{route('vendor.index')}}">View Details</a>
+                    <a class="small text-dark stretched-link" href="{{route('supplier.index')}}">View Details</a>
                     <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
@@ -61,9 +61,9 @@
 <div class="row">
         <div class="col-xl-3 col-md-6">
             <div class="card bg-light text-dark mb-4">
-                <div class="card-body">Licenses</div>
+                <div class="card-body">Subscription</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-dark stretched-link" href="{{route('license.index')}}">View Details</a>
+                    <a class="small text-dark stretched-link" href="{{route('subscription.index')}}">View Details</a>
                     <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>

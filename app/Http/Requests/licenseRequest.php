@@ -30,7 +30,7 @@ class licenseRequest extends FormRequest
 
     public function messages()
     {
-        return ['name.required'=>'License name can not be blank',
-                'name.unique'=>'License name already exists'];
+        return ['name.required'=>'Subscription name can not be blank',
+                'name.unique'=>'Subscription name already exists'];
     }
 }
