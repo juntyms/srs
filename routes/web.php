@@ -76,12 +76,12 @@ Route::get('/software/{id}/edit', [softController::class, 'edit'])->name('softwa
 Route::post('/software/{id}/edit', [softController::class, 'update'])->name('software.update');
 Route::get('/software/{id}/delete', [softController::class, 'delete'])->name('software.delete');
 
-Route::get('/SoftwareType/index', [softypeController::class, 'index'])->name('SoftwareType.index');
-Route::get('/SoftwareType/add', [softypeController::class, 'add'])->name('SoftwareType.add');
-Route::post('/SoftwareType/add', [softypeController::class, 'save'])->name('SoftwareType.save');
-Route::get('/SoftwareType/{id}/edit', [softypeController::class, 'edit'])->name('SoftwareType.edit');
-Route::post('/SoftwareType/{id}/edit', [softypeController::class, 'update'])->name('SoftwareType.update');
-Route::get('/SoftwareType/{id}/delete', [softypeController::class, 'delete'])->name('SoftwareType.delete');
+Route::get('/LicenseType/index', [softypeController::class, 'index'])->name('LicenseType.index');
+Route::get('/LicenseType/add', [softypeController::class, 'add'])->name('LicenseType.add');
+Route::post('/LicenseType/add', [softypeController::class, 'save'])->name('LicenseType.save');
+Route::get('/LicenseType/{id}/edit', [softypeController::class, 'edit'])->name('LicenseType.edit');
+Route::post('/LicenseType/{id}/edit', [softypeController::class, 'update'])->name('LicenseType.update');
+Route::get('/LicenseType/{id}/delete', [softypeController::class, 'delete'])->name('LicenseType.delete');
 
 Route::get('/supplier/index', [vendorController::class, 'index'])->name('supplier.index');
 Route::get('/supplier/add', [vendorController::class, 'add'])->name('supplier.add');
