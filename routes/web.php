@@ -52,12 +52,12 @@ Route::get('/company/{id}/edit', [companyController::class, 'edit'])->name('comp
 Route::post('/company/{id}/edit', [companyController::class, 'update'])->name('company.update');
 Route::get('/company/{id}/delete', [companyController::class, 'delete'])->name('company.delete');
 
-Route::get('/license/index', [licenseController::class, 'index'])->name('license.index');
-Route::get('/license/add', [licenseController::class, 'add'])->name('license.add');
-Route::post('/license/add', [licenseController::class, 'save'])->name('license.save');
-Route::get('/license/{id}/edit', [licenseController::class, 'edit'])->name('license.edit');
-Route::post('/license/{id}/edit', [licenseController::class, 'update'])->name('license.update');
-Route::get('/license/{id}/delete', [licenseController::class, 'delete'])->name('license.delete');
+Route::get('/subscription/index', [licenseController::class, 'index'])->name('subscription.index');
+Route::get('/subscription/add', [licenseController::class, 'add'])->name('subscription.add');
+Route::post('/subscription/add', [licenseController::class, 'save'])->name('subscription.save');
+Route::get('/subscription/{id}/edit', [licenseController::class, 'edit'])->name('subscription.edit');
+Route::post('/subscription/{id}/edit', [licenseController::class, 'update'])->name('subscription.update');
+Route::get('/subscription/{id}/delete', [licenseController::class, 'delete'])->name('subscription.delete');
 
 Route::get('/ays/active', [acyController::class, 'activate'])->name('ays.activate');
 
