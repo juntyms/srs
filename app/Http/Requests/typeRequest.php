@@ -29,7 +29,7 @@ class typeRequest extends FormRequest
     }
     public function messages()
     {
-        return ['name.required'=>'Software Type can not be blank',
-                'name.unique'=>'Software Type already exists'];
+        return ['name.required'=>'License Type can not be blank',
+                'name.unique'=>'License Type already exists'];
     }
 }

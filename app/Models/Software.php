@@ -17,6 +17,8 @@ class Software extends Model
         'software_vendor_id',
         'software_type_id',
         'company_id',
+        'version',
+        'quantity',
         'purchase_date',
         'price',
         'expiry_date',

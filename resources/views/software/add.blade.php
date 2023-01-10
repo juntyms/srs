@@ -1,12 +1,12 @@
 @extends('layouts')
-@section('title','Add Software - SRS')
+@section('title','Add License - SRS')
 @section('content')
 
 <div class="card mb-4 mt-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        Add Software
-        <a href="{{ route('software.index')}}" class="float-end btn btn-sm btn-success">View All Software</a>
+        Add License
+        <a href="{{ route('software.index')}}" class="float-end btn btn-sm btn-success">View All Licenses</a>
     </div>
     <div class="card-body">
     @if($errors->any())
@@ -24,25 +24,31 @@
                 <tr>
                     <th>Academic Year :</th> 
                     <td>{{ Form::select('ay_id',$ays,null, ['class'=>'form-select','placeholder'=>'Select Academic Year','required']) }}</td>   
-                    <th>Software Name :</th>
+                    <th>License Name :</th>
                     <td>{{ Form::text('name',null, ['class'=>'form-control']) }}</td>  
+                </tr>
+                <tr>
+                    <th>Version :</th> 
+                    <td>{{ Form::text('version',null, ['class'=>'form-control']) }}</td>   
+                    <th>Quantity :</th>
+                    <td>{{ Form::text('quantity',null, ['class'=>'form-control']) }}</td>  
                 </tr>
                 <tr>
                     <th>Department :</th>
                     <td>{{ Form::select('department_id',$department,null, ['class'=>'form-select','placeholder'=>'Select Department','required']) }}</td> 
-                    <th>Software Vendor :</th>
-                    <td>{{ Form::select('software_vendor_id',$softwareVendors,null, ['class'=>'form-select','placeholder'=>'Select Vendor','required']) }}</td>                   
+                    <th>Supplier :</th>
+                    <td>{{ Form::select('software_vendor_id',$softwareVendors,null, ['class'=>'form-select','placeholder'=>'Select Supplier','required']) }}</td>                   
                 </tr>
                 <tr>
-                    <th>Software Type :</th>
-                    <td>{{ Form::select('software_type_id',$SoftwareType,null, ['class'=>'form-select','placeholder'=>'Select Software Type','required']) }}</td>
+                    <th>License Type :</th>
+                    <td>{{ Form::select('software_type_id',$SoftwareType,null, ['class'=>'form-select','placeholder'=>'Select Licenses Type','required']) }}</td>
                     <th>Company :</th>
                     <td>{{ Form::select('company_id',$company,null, ['class'=>'form-select','placeholder'=>'Select Company','required']) }}</td>                                 
                 </tr>
                 <tr>
                     <th>Purchase Date :</th>                  
                     <td>{{ Form::date('purchase_date',null,['class'=>'form-control']) }}</td>
-                    <th>Price :</th>
+                    <th>Total Price :</th>
                     <td>{{ Form::text('price',null, ['class'=>'form-control']) }}</td>                   
                 </tr>
                 <tr>
@@ -52,8 +58,8 @@
                     <td>{{ Form::date('warranty_end_date',null, ['class'=>'form-control']) }}</td>                    
                 </tr>
                 <tr>
-                    <th>License :</th>
-                    <td>{{ Form::select('license_id',$License,null, ['class'=>'form-select','placeholder'=>'Select License','required'] ) }}</td>
+                    <th>Subscription :</th>
+                    <td>{{ Form::select('license_id',$License,null, ['class'=>'form-select','placeholder'=>'Select Subscription','required'] ) }}</td>
                     <th>Available :</th>
                     <td>{{ Form::select ('installer_is_available', ['1' => 'Yes', '0' => 'No'], 2 , ['class'=>'form-select','id' =>'installer_is_available']) }}</td>
                 </tr>
