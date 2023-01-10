@@ -55,13 +55,13 @@
                 @if(Auth::user()->privilege->privilege_id != 3)
                 <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Softwares</a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Licenses</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         @if(Auth::user()->privilege->privilege_id == 1)
-                            <li><a class="dropdown-item" href="{{ route('software.index')}}">All Software</a></li>
+                            <li><a class="dropdown-item" href="{{ route('software.index')}}">All License</a></li>
                             @endif 
                             @if(Auth::user()->privilege->privilege_id != 1)
-                            <li><a class="dropdown-item" href="{{ route('dashboard')}}">All Software</a></li>
+                            <li><a class="dropdown-item" href="{{ route('dashboard')}}">All License</a></li>
                             @endif
                             <li><a class="dropdown-item" href="{{ route('company.index')}}">Companies</a></li>
                             @if(Auth::user()->privilege->privilege_id == 1)
