@@ -16,19 +16,19 @@ class vendorController extends Controller
     public function index()
     {
         $vendor = vendor::get();   
-        return view ('vendor.index')
+        return view ('supplier.index')
         ->with('vendor',$vendor);
     }
 
     public function add()
     {
-        return view ('vendor.add');
+        return view ('supplier.add');
     }
 
     public function save(vendorRequest $request)
     {
         vendor::create($request->all());
-        return redirect()->route('vendor.add')->with('msg','Data has been submitted');
+        return redirect()->route('supplier.add')->with('msg','Data has been submitted');
     }
 
 //    public function delete($id)
@@ -40,13 +40,13 @@ class vendorController extends Controller
     public function edit($id)
     {
         $vendor = vendor::findOrFail($id);
-        return view('vendor.edit')->with('vendor',$vendor);
+        return view('supplier.edit')->with('vendor',$vendor);
     }
     
     public function update(vendorRequest $request, $id)
     {
         $vendor = vendor::findOrFail($id);
         $vendor->update(['name'=>$request->name]);
-        return redirect('vendor/'.$id.'/edit')->with('msg','Data has been Updated'); 
+        return redirect('supplier/'.$id.'/edit')->with('msg','Data has been Updated'); 
     }
 }

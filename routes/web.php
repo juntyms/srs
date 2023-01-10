@@ -83,11 +83,11 @@ Route::get('/SoftwareType/{id}/edit', [softypeController::class, 'edit'])->name(
 Route::post('/SoftwareType/{id}/edit', [softypeController::class, 'update'])->name('SoftwareType.update');
 Route::get('/SoftwareType/{id}/delete', [softypeController::class, 'delete'])->name('SoftwareType.delete');
 
-Route::get('/vendor/index', [vendorController::class, 'index'])->name('vendor.index');
-Route::get('/vendor/add', [vendorController::class, 'add'])->name('vendor.add');
-Route::post('/vendor/add', [vendorController::class, 'save'])->name('vendor.save');
-Route::get('/vendor/{id}/edit', [vendorController::class, 'edit'])->name('vendor.edit');
-Route::post('/vendor/{id}/edit', [vendorController::class, 'update'])->name('vendor.update');
+Route::get('/supplier/index', [vendorController::class, 'index'])->name('supplier.index');
+Route::get('/supplier/add', [vendorController::class, 'add'])->name('supplier.add');
+Route::post('/supplier/add', [vendorController::class, 'save'])->name('supplier.save');
+Route::get('/supplier/{id}/edit', [vendorController::class, 'edit'])->name('supplier.edit');
+Route::post('/supplier/{id}/edit', [vendorController::class, 'update'])->name('supplier.update');
 
 Route::get('/user/index', [userController::class, 'index'])->name('user.index');
 Route::get('/user/add', [userController::class, 'add'])->name('user.add');

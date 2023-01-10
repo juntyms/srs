@@ -29,7 +29,7 @@ class vendorRequest extends FormRequest
     }
     public function messages()
     {
-        return ['name.required'=>'Vendor name can not be blank',
-                'name.unique'=>'Vendor name already exists'];
+        return ['name.required'=>'Supplier name can not be blank',
+                'name.unique'=>'Supplier name already exists'];
     }
 }

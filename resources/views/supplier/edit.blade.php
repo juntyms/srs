@@ -1,12 +1,12 @@
 @extends('layouts')
-@section('title','Update Software Vendor - SRS')
+@section('title','Update Software Supplier - SRS')
 @section('content')
 
 <div class="card mb-4 mt-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
         View Software Vendors
-        <a href="{{ route('vendor.index')}}" class="float-end btn btn-sm btn-success">View All Vendors</a>
+        <a href="{{ route('supplier.index')}}" class="float-end btn btn-sm btn-success">View All Supplier</a>
     </div>
     <div class="card-body">
     @if($errors->any())
@@ -20,7 +20,7 @@
         @endif
             @csrf
             <table class="table table-bordered">
-            {{ Form::model($vendor,['route'=>['vendor.update',$vendor->id]]) }}
+            {{ Form::model($supplier,['route'=>['supplier.update',$supplier->id]]) }}
                 <tr>
                     <th>Software Vendor</th>
                     <th>{{ Form::text('name',null, ['class'=>'form-control']) }}</th>

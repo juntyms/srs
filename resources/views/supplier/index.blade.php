@@ -1,13 +1,13 @@
 @extends('layouts')
-@section('title','Software Vendors - SRS')
+@section('title','Suppliers - SRS')
 @section('content')
 
 <div class="card mb-4 mt-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        View Software Vendor
+        View Software Supplier
         @if(Auth::user()->privilege->privilege_id == 1)
-        <a href="{{ route('vendor.add')}}" class="float-end btn btn-sm btn-success">Add New Vendor</a>
+        <a href="{{ route('supplier.add')}}" class="float-end btn btn-sm btn-success">Add New Supplier</a>
         @endif
     </div>
     <div class="card-body">
@@ -18,7 +18,7 @@
             <table id="datatablesSimple" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th>Software Vendor</th>
+                    <th>Software Supplier</th>
                     @if(Auth::user()->privilege->privilege_id == 1)
                     <th>Action</th>
                     @endif 
@@ -29,7 +29,7 @@
                 <tr>
                     <td>{{ $vendor->name }}</td>
                     @if(Auth::user()->privilege->privilege_id == 1)
-                    <td><a href="{{ route('vendor.edit',$vendor->id)}}" class="btn btn-info btn-sm">Edit</a></td>
+                    <td><a href="{{ route('supplier.edit',$vendor->id)}}" class="btn btn-info btn-sm">Edit</a></td>
                     @endif
                 </tr>
                 @endforeach
