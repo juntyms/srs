@@ -1,12 +1,12 @@
 @extends('layouts')
-@section('title','All Software - SRS')
+@section('title','All Licenses - SRS')
 @section('content')
 <div class="card mb-4 mt-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        All Software
+        All Licenses
         <a href="{{ route('exportExcel') }}" class="float-end btn btn-sm btn-info">export XLS</a>
-        <a href="{{ route('software.add')}}" class="float-end btn btn-sm btn-success">Add Software</a>
+        <a href="{{ route('software.add')}}" class="float-end btn btn-sm btn-success">Add License</a>
     </div>
     <div class="card-body">
     @if(Session::has('msg'))
