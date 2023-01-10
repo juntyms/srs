@@ -84,8 +84,6 @@
                             <li><a class="dropdown-item" href="{{ route('ays.index')}}">Academic Years</a></li>
                             <li><a class="dropdown-item" href="{{ route('user.index')}}">Users</a></li>
                             <li><a class="dropdown-item" href="{{ route('privileges.index')}}">Assign Privilege</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                            <li><a class="dropdown-item" href="#!">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
