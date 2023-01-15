@@ -68,8 +68,12 @@
                     <td colspan="3">{{ Form::text('custodian_name',null, ['class'=>'form-control']) }}</td>
                 </tr>
                 <tr>
+                    <th>Serial Number :</th>
+                    <td colspan="3">{{ Form::textarea('serial_number',null, ['class'=>'form-control']) }}</td>
+                </tr>
+                <tr>
                 <td colspan="4">
-                    <input type="submit" value="Add Software" class="btn btn-info btn-sm"></td>
+                    <input type="submit" value="Add Software" class="btn btn-primary btn-sm"></td>
                 </tr>
                 {{ Form::close() }} 
             </table>

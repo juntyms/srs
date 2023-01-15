@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="card mb-4 mt-4">
-    <div class="card-header">
+    <div class="card-header bg-">
         <i class="fas fa-table me-1"></i>
         View Users
         <a href="{{ route('user.add')}}" class="float-end btn btn-sm btn-success">Create New User</a>
@@ -31,7 +31,7 @@
                     <td>{{ $user->department->name}}</td>
                     <td>{{ $user->fullname }}</td>
                     <td>{{ $user->email }}</td>
-                    <td><a href="{{ route('user.edit',$user->id)}}" class="btn btn-info btn-sm">Edit</a>
+                    <td><a href="{{ route('user.edit',$user->id)}}" class="btn btn-primary btn-sm">Edit</a>
                     <a onclick="return confirm('Are you sure to delete this data?')" href="{{ route('user.delete',$user->id) }}" class="btn btn-danger btn-sm">delete</a></td>
                     
                 </tr>

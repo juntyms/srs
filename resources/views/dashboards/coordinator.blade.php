@@ -29,6 +29,7 @@
                     <th>Available</th>
                     <th>Company</th>
                     <th>Custodian Name</th>
+                    <th>Serial Number</th>
                     <th>Department</th>
                     <th>Actions</th>
                 </tr>
@@ -49,7 +50,8 @@
                     <td>{{ $software->vendor->name }}</td>
                     <td>{{ ($software->installer_is_available)? 'Yes':'No' }}</td>
                     <td>{{ $software->comp->name }}</td>
-                    <td>{{ $software->custodian_name }}</td> 
+                    <td>{{ $software->custodian_name }}</td>
+                    <td>{{ $software->serial_number }}</td>   
                     <td>{{ $software->dept->name}}</td>    
                 </tr>
                 @endforeach

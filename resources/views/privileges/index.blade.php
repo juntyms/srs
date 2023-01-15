@@ -26,7 +26,7 @@
                     <th>{{ Form::select('privilege_id',$privilege, null, ['class'=>'form-select'])}}</th>
                 </tr>
                 <tr>
-                <th colspan="2"><input type="submit" value="Assign Privilege" class="btn btn-info btn-sm"></th>     
+                <th colspan="2"><input type="submit" value="Assign Privilege" class="btn btn-primary btn-sm"></th>     
                 </tr>
                 {{ Form::close() }}
             </table>

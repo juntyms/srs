@@ -25,7 +25,7 @@
                     <th>{{ Form::text('name',null, ['class'=>'form-control']) }}</th>
                 </tr>
                 <tr>
-                    <th colspan="2"><input type="submit" value="Save Changes" class="btn btn-info btn-sm"></th>      
+                    <th colspan="2"><input type="submit" value="Save Changes" class="btn btn-primary btn-sm"></th>      
                 </tr>
             {{ Form::close() }}
             </table>

@@ -38,7 +38,7 @@
                             </td> 
                     @endif
                     <td>
-                        <a href="{{ route('ays.edit',$ays->id)}}" class="btn btn-info btn-sm">Edit</a>
+                        <a href="{{ route('ays.edit',$ays->id)}}" class="btn btn-primary btn-sm">Edit</a>
                         <a onclick="return confirm('Are you sure to delete this data?')" href="{{ route('ays.delete',$ays->id)}}" class="btn btn-danger btn-sm">delete</a>
                         <a href="{{ route('ays.update_active',$ays->id) }}" class="btn btn-warning btn-sm">Active This Year</a>
                     </td>

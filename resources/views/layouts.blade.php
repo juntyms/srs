@@ -42,7 +42,7 @@
 </head>
     <body class="sb-nav-fixed">
     @include('sweetalert::alert')
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark shadow">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="{{route('dashboard')}}">Software Record System</a>
             @if (!empty(Auth::user()->privilege->privilege_id))
@@ -106,7 +106,9 @@
         </nav>
         <div class="container-fluid px-2 mt-5">
             <div class="card-body">
-                <h4 class="h4">Software Record System</h4><hr>
+                <h4 class="h4"></h4>
+            </div>
+            <div class="card-body">
                 @yield('content')
             </div>
                     

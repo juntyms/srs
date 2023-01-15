@@ -29,7 +29,7 @@
                 <tr>
                     <td>{{ $vendor->name }}</td>
                     @if(Auth::user()->privilege->privilege_id == 1)
-                    <td><a href="{{ route('supplier.edit',$vendor->id)}}" class="btn btn-info btn-sm">Edit</a></td>
+                    <td><a href="{{ route('supplier.edit',$vendor->id)}}" class="btn btn-primary btn-sm">Edit</a></td>
                     @endif
                 </tr>
                 @endforeach
