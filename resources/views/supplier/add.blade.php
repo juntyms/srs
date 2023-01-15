@@ -26,7 +26,7 @@
                     <th>{{ Form::text('name',null, ['class'=>'form-control']) }}</th>
                 </tr>
                 <tr>
-                    <th colspan="2"><input type="submit" value="Add Supplier" class="btn btn-info btn-sm"></th>
+                    <th colspan="2"><input type="submit" value="Add Supplier" class="btn btn-primary btn-sm"></th>
                 </tr>
             {{ Form::close() }}
             </table>

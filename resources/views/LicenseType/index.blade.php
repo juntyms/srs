@@ -29,7 +29,7 @@
                     <td>{{ $SoftwareType->name }}</td>
                     @if(Auth::user()->privilege->privilege_id == 1)
                     <td>
-                        <a href="{{ route('LicenseType.edit',$SoftwareType->id)}}" class="btn btn-info btn-sm">Edit</a>
+                        <a href="{{ route('LicenseType.edit',$SoftwareType->id)}}" class="btn btn-primary btn-sm">Edit</a>
                         <a onclick="return confirm('Are you sure to delete this data?')" href="{{ route('LicenseType.delete',$SoftwareType->id) }}" class="btn btn-danger btn-sm">delete</a>
                     </td>
                     @endif

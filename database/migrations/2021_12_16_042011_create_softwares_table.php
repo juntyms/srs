@@ -35,6 +35,7 @@ class CreateSoftwaresTable extends Migration
             $table->foreign('license_id')->references('id')->on('licenses');
             $table->boolean('installer_is_available')->default(false);
             $table->string('custodian_name')->nullable();
+            $table->string('serial_number')->nullable();
             $table->timestamps();
         });
     }

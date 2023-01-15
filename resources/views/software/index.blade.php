@@ -30,6 +30,7 @@
                     <th>Available</th>
                     <th>Company</th>
                     <th>Custodian Name</th>
+                    <th>Serial Number</th>
                     <th>Department</th>
                     <th>Actions</th>
                 </tr>
@@ -50,9 +51,10 @@
                     <td>{{ $software->vendor->name }}</td>
                     <td>{{ ($software->installer_is_available)? 'Yes':'No' }}</td>
                     <td>{{ $software->comp->name }}</td>
-                    <td>{{ $software->custodian_name }}</td> 
+                    <td>{{ $software->custodian_name }}</td>
+                    <td>{{ $software->serial_number }}</td>  
                     <td>{{ $software->dept->name}}</td> 
-                    <td><a href="{{ route('software.edit',$software->id)}}" class="btn btn-info btn-sm">Edit</a>
+                    <td><a href="{{ route('software.edit',$software->id)}}" class="btn btn-primary btn-sm">Edit</a>
                         @if(Auth::user()->privilege->privilege_id == 1)
                         <a onclick="return confirm('Are you sure to delete this data?')" href="{{ route('software.delete',$software->id) }}" class="btn btn-danger btn-sm">delete</a>
                         @endif

@@ -25,7 +25,8 @@ class Software extends Model
         'warranty_end_date',
         'license_id',
         'installer_is_available',
-        'custodian_name'
+        'custodian_name',
+        'serial_number'
     ];
 
     public function ay()
