@@ -28,8 +28,6 @@
                 </div>
             </div>
         </div>
-</div>
-<div class="row">
         <div class="col-xl-3 col-md-6">
             <div class="card bg-secondary text-white mb-4">
                 <div class="card-body">Licenses</div>
@@ -39,6 +37,8 @@
                 </div>
             </div>
         </div>
+</div>
+<div class="row">
         <div class="col-xl-3 col-md-6">
             <div class="card bg-danger text-white mb-4">
                 <div class="card-body">License Types</div>
@@ -57,8 +57,6 @@
                 </div>
             </div>
         </div>
-</div>
-<div class="row">
         <div class="col-xl-3 col-md-6">
             <div class="card bg-light text-dark mb-4">
                 <div class="card-body">Subscription</div>
