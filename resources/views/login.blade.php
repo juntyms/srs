@@ -8,7 +8,7 @@
         <div id="layoutAuthentication_content">
             <main>
                 <div class="container">
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center d-flex align-items-center" style="min-height: 50vh">
                         <div class="my-3 mt-5"></div>
                         <div class="col-lg-5">
                             <div class="card shadow-lg border-1 rounded-lg mt-5">
