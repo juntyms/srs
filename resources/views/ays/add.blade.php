@@ -25,7 +25,7 @@
                     <th>{{ Form::text('name',null, ['class'=>'form-control']) }}</th>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type="submit" value="Add Academic Year" class="btn btn-info btn-sm"></td>
+                    <td colspan="2"><input type="submit" value="Add Academic Year" class="btn btn-primary btn-sm"></td>
                     {{ Form::close() }}
                 </tr>
             </table>

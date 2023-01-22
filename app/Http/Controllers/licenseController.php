@@ -16,37 +16,37 @@ class licenseController extends Controller
     public function index()
     {
         $licenses = license::get();   
-        return view ('license.index')
+        return view ('subscription.index')
         ->with('license',$licenses);
     }
 
     public function add()
     {
-        return view ('license.add');
+        return view ('subscription.add');
     }
 
     public function save(licenseRequest $request)
     {
         license::create($request->all());
-        return redirect()->route('license.add')->with('msg','Data has been submitted');
+        return redirect()->route('subscription.add')->with('msg','Data has been submitted');
     }
 
     public function delete($id)
     {
         license::destroy($id);
-        return redirect()->route('license.index')->with('msg','Data has been Deleted');
+        return redirect()->route('subscription.index')->with('msg','Data has been Deleted');
     }
 
     public function edit($id)
     {
         $license = license::findOrFail($id);
-        return view('license.edit')->with('license',$license);
+        return view('subscription.edit')->with('license',$license);
     }
     
     public function update(licenseRequest $request, $id)
     {
         $license = license::findOrFail($id);
         $license->update(['name'=>$request->name]);
-        return redirect('license/'.$id.'/edit')->with('msg','Data has been Updated'); 
+        return redirect('subscription/'.$id.'/edit')->with('msg','Data has been Updated'); 
     }
 }

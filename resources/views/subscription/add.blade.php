@@ -1,11 +1,11 @@
 @extends('layouts')
-@section('title','Add New License - SRS')
+@section('title','Add New Subscription - SRS')
 @section('content')
 <div class="card mb-4 mt-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        Add New License
-        <a href="{{ route('license.index')}}" class="float-end btn btn-sm btn-success">View All Licenses</a>
+        Add New Subscription
+        <a href="{{ route('subscription.index')}}" class="float-end btn btn-sm btn-success">View All Subscriptions</a>
     </div>
     <div class="card-body">
     @if($errors->any())
@@ -19,13 +19,13 @@
         @endif
             @csrf
             <table class="table table-bordered">
-            {{ Form::open(['route'=>'license.save']) }} 
+            {{ Form::open(['route'=>'subscription.save']) }} 
                 <tr>
-                    <th>License Name</th>
+                    <th>Subscription Name</th>
                     <th>{{ Form::text('name',null, ['class'=>'form-control']) }}</th>
                 </tr>
                 <tr>
-                    <th colspan="2"><input type="submit" value="Add License" class="btn btn-info btn-sm"></th>
+                    <th colspan="2"><input type="submit" value="Add Subscription" class="btn btn-primary btn-sm"></th>
                 </tr>
             {{ Form::close() }}
             </table>

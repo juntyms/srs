@@ -17,13 +17,16 @@ class Software extends Model
         'software_vendor_id',
         'software_type_id',
         'company_id',
+        'version',
+        'quantity',
         'purchase_date',
         'price',
         'expiry_date',
         'warranty_end_date',
         'license_id',
         'installer_is_available',
-        'custodian_name'
+        'custodian_name',
+        'serial_number'
     ];
 
     public function ay()

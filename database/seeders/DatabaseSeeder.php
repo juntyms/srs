@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
         $this->call(PrivilegeTableSeeder::class);
         $this->call(SoftwareTypeTableSeeder::class);
         $this->call(UserTableSeeder::class);
+        $this->call(UserTableSeederPrivilege::class);
+        
         //\App\Models\User::factory(10)->create();
     }
 }

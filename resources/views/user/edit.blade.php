@@ -42,7 +42,7 @@
                     <td>{{ Form::text('email',null, ['class'=>'form-control']) }}</td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type="submit" value="Save Changes" class="btn btn-info btn-sm"></td>
+                    <td colspan="2"><input type="submit" value="Save Changes" class="btn btn-primary btn-sm"></td>
                     {{ Form::close() }}  
                 </tr>
 

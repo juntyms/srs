@@ -34,7 +34,7 @@
                     <td>{{ $company->address }}</td>
                     <td>{{ $company->gsm }}</td>
                     <td>{{ $company->contact_person }}</td>
-                    <td><a href="{{ route('company.edit',$company->id)}}" class="btn btn-info btn-sm">Edit</a></td>
+                    <td><a href="{{ route('company.edit',$company->id)}}" class="btn btn-primary btn-sm">Edit</a></td>
                 </tr>
                 @endforeach
             </tbody>

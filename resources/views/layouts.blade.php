@@ -42,7 +42,7 @@
 </head>
     <body class="sb-nav-fixed">
     @include('sweetalert::alert')
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <nav class="sb-topnav navbar navbar-expand navbar-light bg-light shadow">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="{{route('dashboard')}}">Software Record System</a>
             @if (!empty(Auth::user()->privilege->privilege_id))
@@ -55,19 +55,19 @@
                 @if(Auth::user()->privilege->privilege_id != 3)
                 <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Softwares</a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Licenses</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         @if(Auth::user()->privilege->privilege_id == 1)
-                            <li><a class="dropdown-item" href="{{ route('software.index')}}">All Software</a></li>
+                            <li><a class="dropdown-item" href="{{ route('software.index')}}">All License</a></li>
                             @endif 
                             @if(Auth::user()->privilege->privilege_id != 1)
-                            <li><a class="dropdown-item" href="{{ route('dashboard')}}">All Software</a></li>
+                            <li><a class="dropdown-item" href="{{ route('dashboard')}}">All License</a></li>
                             @endif
                             <li><a class="dropdown-item" href="{{ route('company.index')}}">Companies</a></li>
                             @if(Auth::user()->privilege->privilege_id == 1)
-                            <li><a class="dropdown-item" href="{{ route('license.index')}}">Licenses</a></li>
-                            <li><a class="dropdown-item" href="{{ route('SoftwareType.index')}}">Software Types</a></li>
-                            <li><a class="dropdown-item" href="{{ route('vendor.index')}}">Software Vendors</a></li>
+                            <li><a class="dropdown-item" href="{{ route('subscription.index')}}">Subscription</a></li>
+                            <li><a class="dropdown-item" href="{{ route('LicenseType.index')}}">License Types</a></li>
+                            <li><a class="dropdown-item" href="{{ route('supplier.index')}}">Suppliers</a></li>
                             @endif
                         </ul>
                     </li>
@@ -84,8 +84,6 @@
                             <li><a class="dropdown-item" href="{{ route('ays.index')}}">Academic Years</a></li>
                             <li><a class="dropdown-item" href="{{ route('user.index')}}">Users</a></li>
                             <li><a class="dropdown-item" href="{{ route('privileges.index')}}">Assign Privilege</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                            <li><a class="dropdown-item" href="#!">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -105,25 +103,22 @@
                     </li>
                 </ul>
             </div>
+            <!--
+            <div style=" margin-left: auto; float: right;">
+            <img src="{{asset('\bootstrap-5.1.3-dist\css\logo2.png')}}" alt="SRS" width="225" height="65">
+            </div> -->
         </nav>
-        <div class="container-fluid px-2 mt-5">
+        <div class="container-fluid px-2 mt-5 ms-auto">
             <div class="card-body">
-                <h4 class="h4">Software Record System</h4><hr>
+                <h4 class="h4"></h4>
+            </div>
+            <div class="card-body">
                 @yield('content')
             </div>
                     
-            </div>
-        </div>                
-        <footer class="my-8 py-4 bg-light mt-auto">
-            <div class="container-fluid px-4">
-                <div class="d-flex align-items-center justify-content-between small">                        
-                    <div class="text-muted align-text-middle">&copy; Copyright  Copyright UTAS - Salalah. All Rights Reserved - Developed By: ETC Software Development Team</div>
-                    <div>
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                </div>
-            </div>
+        </div>
+        <footer class="py-0 fixed-bottom my-8 bg-light small">
+            <p class="text-center text-muted align-text-middle medium">&copy; Copyright  Copyright UTAS - Salalah. All Rights Reserved - Developed By: ETC Software Development Team</p>                        
         </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

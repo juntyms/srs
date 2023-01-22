@@ -2,16 +2,16 @@
 <link href="{{asset('\bootstrap-5.1.3-dist\css\styles.css')}}" rel="stylesheet" />
 <script src="{{asset('\bootstrap-5.1.3-dist\js\all.min.js')}}" crossorigin="anonymous"></script>
 
-<body class="bg-dark">
+<body class="bg-light">
     @include('sweetalert::alert')
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>
                 <div class="container">
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center d-flex align-items-center" style="min-height: 50vh">
                         <div class="my-3 mt-5"></div>
                         <div class="col-lg-5">
-                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card shadow-lg border-1 rounded-lg mt-5">
                                 <div class="card-header">
 </br>
                                     <center><img src="{{asset('\bootstrap-5.1.3-dist\css\logo.png')}}" alt="SRS" width="280" height="100"></center>

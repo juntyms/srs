@@ -24,15 +24,18 @@ class CreateSoftwaresTable extends Migration
             $table->unsignedBigInteger('software_type_id');
             $table->foreign('software_type_id')->references('id')->on('software_types');
             $table->unsignedBigInteger('company_id');
-            $table->foreign('company_id')->references('id')->on('companies');
-            $table->datetime('purchase_date');
+//            $table->foreign('company_id')->references('id')->on('companies');
+            $table->string('version')->nullable();
+            $table->string('quantity')->nullable();
+            $table->datetime('purchase_date')->nullable();
             $table->decimal('price', 8, 3)->nullable();
-            $table->datetime('expiry_date');
-            $table->datetime('warranty_end_date');
+            $table->datetime('expiry_date')->nullable();
+            $table->datetime('warranty_end_date')->nullable();
             $table->unsignedBigInteger('license_id');
             $table->foreign('license_id')->references('id')->on('licenses');
             $table->boolean('installer_is_available')->default(false);
-            $table->string('custodian_name');
+            $table->string('custodian_name')->nullable();
+            $table->string('serial_number')->nullable();
             $table->timestamps();
         });
     }
