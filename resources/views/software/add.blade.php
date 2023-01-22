@@ -73,7 +73,7 @@
                 </tr>
                 <tr>
                 <td colspan="4">
-                    <input type="submit" value="Add Software" class="btn btn-primary btn-sm"></td>
+                    <input type="submit" value="Add License" class="btn btn-primary btn-sm"></td>
                 </tr>
                 {{ Form::close() }} 
             </table>
