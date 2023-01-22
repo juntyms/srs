@@ -20,7 +20,7 @@
         @endif
             @csrf
             <table class="table table-bordered">
-            {{ Form::model($supplier,['route'=>['supplier.update',$supplier->id]]) }}
+            {{ Form::model($vendor,['route'=>['supplier.update',$vendor->id]]) }}
                 <tr>
                     <th>Software Vendor</th>
                     <th>{{ Form::text('name',null, ['class'=>'form-control']) }}</th>
