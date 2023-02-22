@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Company;
 use App\Http\Requests\compRequest;
+use Alert;
 
 class companyController extends Controller
 {
@@ -28,7 +29,8 @@ class companyController extends Controller
     public function save(compRequest $request)
     {
         company::create($request->all());
-        return redirect()->route('company.add')->with('msg','Data has been submitted');
+        Alert::success('Well Done','Data has been submitted');
+        return redirect()->route('company.add');//->with('msg','Data has been submitted');
     }
 
     public function edit($id)
@@ -46,6 +48,7 @@ class companyController extends Controller
         $company->update(['address'=>$request->address]);
         $company->update(['gsm'=>$request->gsm]);
         $company->update(['contact_person'=>$request->contact_person]);
-        return redirect('company/'.$id.'/edit')->with('msg','Data has been Updated'); 
+        Alert::success('Well Done','Data has been Updated');
+        return redirect('company/'.$id.'/edit');//->with('msg','Data has been Updated'); 
     }
 }

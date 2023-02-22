@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Vendor;
 use App\Http\Requests\vendorRequest;
+use Alert;
 
 class vendorController extends Controller
 {
@@ -28,7 +29,9 @@ class vendorController extends Controller
     public function save(vendorRequest $request)
     {
         vendor::create($request->all());
-        return redirect()->route('supplier.add')->with('msg','Data has been submitted');
+        Alert::success('Well Done','Data has been Submitted');
+
+        return redirect()->route('supplier.add');//->with('msg','Data has been submitted');
     }
 
 //    public function delete($id)
@@ -47,6 +50,8 @@ class vendorController extends Controller
     {
         $vendor = vendor::findOrFail($id);
         $vendor->update(['name'=>$request->name]);
-        return redirect('supplier/'.$id.'/edit')->with('msg','Data has been Updated'); 
+        Alert::success('Well Done','Data has been Updated');
+
+        return redirect('supplier/'.$id.'/edit');//->with('msg','Data has been Updated'); 
     }
 }

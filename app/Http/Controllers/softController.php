@@ -13,6 +13,7 @@ use App\Models\ays;
 use App\Models\softwareVendors;
 use App\Http\Requests\softwareRequest;
 use Auth;
+use Alert;
 
 class softController extends Controller
 {
@@ -65,12 +66,14 @@ class softController extends Controller
     public function save(softwareRequest $request)
     {
         software::create($request->all());
+        Alert::success('Well Done','Record has been Added');
         return redirect()->route('software.index');
     }
 
     public function delete($id)
     {
         software::destroy($id);
+        Alert::info('Well Done','Data has been Deleted');
         return redirect()->route('software.index');
     }
 
@@ -96,6 +99,7 @@ class softController extends Controller
     {
         $software = software::findOrFail($id);
         $software->update($request->all());
+        Alert::success('Well Done','Record has been Updated');
 
         return redirect()->route('software.index'); 
     }

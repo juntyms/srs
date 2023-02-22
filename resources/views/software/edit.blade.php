@@ -6,7 +6,9 @@
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
         Update License
+        @if(Auth::user()->privilege->privilege_id == 1)
         <a href="{{ route('software.index')}}" class="float-end btn btn-sm btn-success">View All Licenses</a>
+        @endif
     </div>
     <div class="card-body">
     @if($errors->any())

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\License;
 use App\Http\Requests\licenseRequest;
+use Alert;
+
 
 class licenseController extends Controller
 {
@@ -28,13 +30,15 @@ class licenseController extends Controller
     public function save(licenseRequest $request)
     {
         license::create($request->all());
-        return redirect()->route('subscription.add')->with('msg','Data has been submitted');
+        Alert::success('Well Done','Data has been Submitted');
+        return redirect()->route('subscription.add');//->with('msg','Data has been submitted');
     }
 
     public function delete($id)
     {
         license::destroy($id);
-        return redirect()->route('subscription.index')->with('msg','Data has been Deleted');
+        Alert::info('Well Done','Academic Year has been Deleted');
+        return redirect()->route('subscription.index');//->with('msg','Data has been Deleted');
     }
 
     public function edit($id)
@@ -47,6 +51,7 @@ class licenseController extends Controller
     {
         $license = license::findOrFail($id);
         $license->update(['name'=>$request->name]);
-        return redirect('subscription/'.$id.'/edit')->with('msg','Data has been Updated'); 
+        Alert::success('Well Done','Academic Year has been Updated');
+        return redirect('subscription/'.$id.'/edit');//->with('msg','Data has been Updated'); 
     }
 }
