@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Requests\userRequest;
 use App\Models\Department;
+use Alert;
 
 class userController extends Controller
 {
@@ -30,13 +31,17 @@ class userController extends Controller
     {
         $request['password'] = bcrypt($request->password);
         user::create($request->all());
-        return redirect()->route('user.add')->with('msg','Data has been submitted');
+        Alert::success('Well Done','Data has been Submitted');
+
+        return redirect()->route('user.add');//->with('msg','Data has been submitted');
     }
 
     public function delete($id)
     {
         user::destroy($id);
-        return redirect()->route('user.index')->with('msg','Data has been Deleted');
+        Alert::info('Well Done','User has been Deleted');
+
+        return redirect()->route('user.index');//->with('msg','Data has been Deleted');
     }
 
     public function edit($id)
@@ -54,6 +59,8 @@ class userController extends Controller
         $user->update(['email'=>$request->email]);
         $user->update(['fullname'=>$request->fullname]);
         $user->update(['department_id'=>$request->department_id]);
-        return redirect('user/'.$id.'/edit')->with('msg','Data has been Updated'); 
+        Alert::success('Well Done','User has been Updated');
+
+        return redirect('user/'.$id.'/edit');//->with('msg','Data has been Updated'); 
     }
 }

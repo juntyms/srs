@@ -36,13 +36,15 @@ class acyController extends Controller
     public function save(ayUpdateRequest $request)
     {
         ays::create($request->all());
-        return redirect('ays/add')->with('msg','Data has been submitted');
+        Alert::success('Well Done','Data has been submitted');
+        return redirect('ays/add');//->with('msg','Data has been submitted');
     }
 
     public function delete($id)
     {
         ays::destroy($id);
-        return redirect()->route('ays.index')->with('msg','Data has been Deleted');
+        Alert::info('Well Done','Data has been Deleted');
+        return redirect()->route('ays.index');//->with('msg','Data has been Deleted');
     }
 
     public function edit($id)
@@ -55,8 +57,8 @@ class acyController extends Controller
     {
         $ays = ays::findOrFail($id);
         $ays->update(['name'=>$request->name]);
-
-        return redirect('ays/'.$id.'/edit')->with('msg','Data has been Updated');
+        Alert::success('Well Done','Data has been Updated');
+        return redirect('ays/'.$id.'/edit');//->with('msg','Data has been Updated');
     }
 
     public function update_active(request $request, $id)
@@ -64,6 +66,7 @@ class acyController extends Controller
         ays::where('is_active', '=', 1)->update(['is_active' => 0]);
         $ays = ays::findOrFail($id);
         $ays->update(['is_active' => 1]);
-        return redirect('ays/index')->with('ays',$ays);    
+        Alert::success('Well Done','Academic Year has been Activated');
+        return redirect('ays/index');//->with('ays',$ays);    
     }
 }

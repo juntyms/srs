@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\userprivilege;
 use App\Http\Controllers\userController;
 use App\Http\Requests\privRequest;
+use Alert;
 
 class privController extends Controller
 {
@@ -32,12 +33,14 @@ class privController extends Controller
         $userprivilege = userprivilege::updateOrCreate(['user_id'=>$request['user_id'],
                                                        'privilege_id'=>$request['privilege_id']]);
         //userprivilege::create($request->all());
-        return redirect()->route('privileges.index')->with('ms','Privilege has been Assigned Successfully');
+        Alert::success('Well Done','Privilege has been Assigned Successfully');
+        return redirect()->route('privileges.index');//->with('ms','Privilege has been Assigned Successfully');
     }
     public function revoke($id)
     {
         userprivilege::destroy($id);
-        return redirect()->route('privileges.index')->with('msg','Privilege has been Revoked');
+        Alert::info('Well Done','Privilege has been Revoked Successfully');
+        return redirect()->route('privileges.index');//->with('msg','Privilege has been Revoked');
 
     }
 

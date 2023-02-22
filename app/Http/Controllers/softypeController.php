@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\SoftwareType;
 use App\Http\Requests\typeRequest;
+use Alert;
 
 class softypeController extends Controller
 {
@@ -28,13 +29,16 @@ class softypeController extends Controller
     public function save(typeRequest $request)
     {
         SoftwareType::create($request->all());
-        return redirect()->route('LicenseType.add')->with('msg','Data has been submitted');
+        Alert::success('Well Done','Data has been Submitted');
+        return redirect()->route('LicenseType.add');//->with('msg','Data has been submitted');
     }
 
     public function delete($id)
     {
         SoftwareType::destroy($id);
-        return redirect()->route('LicenseType.index')->with('msg','Data has been Deleted');
+        Alert::info('Well Done','Data has been Deleted');
+
+        return redirect()->route('LicenseType.index');//->with('msg','Data has been Deleted');
     }
 
     public function edit($id)
@@ -47,6 +51,8 @@ class softypeController extends Controller
     {
         $SoftwareTypes = SoftwareType::findOrFail($id);
         $SoftwareTypes->update(['name'=>$request->name]);
-        return redirect('LicenseType/'.$id.'/edit')->with('msg','Data has been Updated'); 
+        Alert::success('Well Done','Data has been Updated');
+
+        return redirect('LicenseType/'.$id.'/edit');//->with('msg','Data has been Updated'); 
     }
 }
