@@ -21,7 +21,7 @@
         </div>
         <div class="col-xl-3 col-md-6">
             <div class="card bg-primary text-white mb-4">
-                <div class="card-body">Companies</div>
+                <div class="card-body">Suppliers</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="{{route('company.index')}}">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -50,9 +50,9 @@
         </div>
         <div class="col-xl-3 col-md-6">
             <div class="card bg-light text-dark mb-4">
-                <div class="card-body">Suppliers</div>
+                <div class="card-body">Vendors</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-dark stretched-link" href="{{route('supplier.index')}}">View Details</a>
+                    <a class="small text-dark stretched-link" href="{{route('SoftwareVendor.index')}}">View Details</a>
                     <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>

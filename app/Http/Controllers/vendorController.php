@@ -17,13 +17,13 @@ class vendorController extends Controller
     public function index()
     {
         $vendor = vendor::get();   
-        return view ('supplier.index')
+        return view ('SoftwareVendor.index')
         ->with('vendor',$vendor);
     }
 
     public function add()
     {
-        return view ('supplier.add');
+        return view ('SoftwareVendor.add');
     }
 
     public function save(vendorRequest $request)
@@ -31,7 +31,7 @@ class vendorController extends Controller
         vendor::create($request->all());
         Alert::success('Well Done','Data has been Submitted');
 
-        return redirect()->route('supplier.add');//->with('msg','Data has been submitted');
+        return redirect()->route('SoftwareVendor.add');//->with('msg','Data has been submitted');
     }
 
 //    public function delete($id)
@@ -43,7 +43,7 @@ class vendorController extends Controller
     public function edit($id)
     {
         $vendor = vendor::findOrFail($id);
-        return view('supplier.edit')->with('vendor',$vendor);
+        return view('SoftwareVendor.edit')->with('vendor',$vendor);
     }
     
     public function update(vendorRequest $request, $id)
@@ -52,6 +52,6 @@ class vendorController extends Controller
         $vendor->update(['name'=>$request->name]);
         Alert::success('Well Done','Data has been Updated');
 
-        return redirect('supplier/'.$id.'/edit');//->with('msg','Data has been Updated'); 
+        return redirect('SoftwareVendor/'.$id.'/edit');//->with('msg','Data has been Updated'); 
     }
 }
