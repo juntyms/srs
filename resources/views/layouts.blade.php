@@ -63,11 +63,11 @@
                             @if(Auth::user()->privilege->privilege_id != 1)
                             <li><a class="dropdown-item" href="{{ route('dashboard')}}">All License</a></li>
                             @endif
-                            <li><a class="dropdown-item" href="{{ route('company.index')}}">Companies</a></li>
+                            <li><a class="dropdown-item" href="{{ route('company.index')}}">Suppliers</a></li>
                             @if(Auth::user()->privilege->privilege_id == 1)
                             <li><a class="dropdown-item" href="{{ route('subscription.index')}}">Subscription</a></li>
                             <li><a class="dropdown-item" href="{{ route('LicenseType.index')}}">License Types</a></li>
-                            <li><a class="dropdown-item" href="{{ route('supplier.index')}}">Suppliers</a></li>
+                            <li><a class="dropdown-item" href="{{ route('SoftwareVendor.index')}}">Vendors</a></li>
                             @endif
                         </ul>
                     </li>

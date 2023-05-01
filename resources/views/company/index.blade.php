@@ -1,12 +1,12 @@
 @extends('layouts')
-@section('title','Companies - SRS')
+@section('title','Suppliers - SRS')
 @section('content')
 
 <div class="card mb-4 mt-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        View Companies
-        <a href="{{ route('company.add')}}" class="float-end btn btn-sm btn-success">Add New Company</a>
+        View Suppliers
+        <a href="{{ route('company.add')}}" class="float-end btn btn-sm btn-success">Add New Supplier</a>
     </div>
     <div class="card-body">
     @if(Session::has('msg'))
@@ -16,10 +16,10 @@
             <table id="datatablesSimple" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th>Company Name</th>
+                    <th>Supplier Name</th>
                     <th>Email</th>
                     <th>Contact No. </th>
-                    <th>Company Address </th>
+                    <th>Supplier Address </th>
                     <th>GSM Number</th>
                     <th>Contact Person</th>
                     <th>Action</th>
